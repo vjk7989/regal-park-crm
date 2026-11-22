@@ -8,13 +8,13 @@ Markers at line end: `[ ]` pending · `[.]` ongoing (note) · `[x]` done
 - P0.3 · Write PLAN.md, todo, ADR, hand-off [x]
 
 ## Phase 1 — foundation (3 Sonnet devs in parallel, disjoint files)
-- T1 · D1 · Project config: package.json, tsconfig.json, vite.config.ts, vitest.config.ts, index.html, .gitignore; npm install [ ]
-- T2 · D2 · shared/types.ts, shared/permissions.ts, shared/format.ts [ ]
-- T3 · D1 · Server: server/index.ts, store.ts, auth.ts, scope.ts, routes.ts (+ domain.ts) — full §5 API [ ]
-- T4 · D2 · scripts/seed.ts → data/seed.json (§6 mock data) [ ]
-- T5 · D3 · Client shell: main.tsx, App.tsx, api.ts, auth.tsx, Layout.tsx, theme.css, Login.tsx + stub pages [ ]
-- T6 · D3 · Components: DataTable.tsx, FormModal.tsx, ui.tsx [ ]
-- T1-6.test · Opus test-writer: API/RBAC/scope/format/seed-integrity edge-case tests; Haiku runs gate [ ]
+- T1 · D1 · Project config: package.json, tsconfig.json, vite.config.ts, vitest.config.ts, index.html, .gitignore; npm install [x]
+- T2 · D2 · shared/types.ts, shared/permissions.ts, shared/format.ts [x]
+- T3 · D1 · Server: server/index.ts, store.ts, auth.ts, scope.ts, routes.ts (+ domain.ts) — full §5 API [x]
+- T4 · D2 · scripts/seed.ts → data/seed.json (§6 mock data) [x]
+- T5 · D3 · Client shell: main.tsx, App.tsx, api.ts, auth.tsx, Layout.tsx, theme.css, Login.tsx + stub pages [x]
+- T6 · D3 · Components: DataTable.tsx, FormModal.tsx, ui.tsx [x]
+- T1-6.test · Opus test-writer: API/RBAC/scope/format/seed-integrity edge-case tests; Haiku runs gate (tests written: ui 116, shared+seed 995, server 571) — Haiku gate GREEN [x]
 
 ## Phase 2 — pages
 - P1 · D1 · Dashboard.tsx [ ]

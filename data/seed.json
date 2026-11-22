@@ -1,0 +1,6695 @@
+{
+  "users": [
+    {
+      "id": "usr-01",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Regal Park Admin",
+      "email": "admin@regalpark.demo",
+      "password": "demo123",
+      "role": "admin",
+      "phone": "+91 90080 32626",
+      "active": true
+    },
+    {
+      "id": "usr-02",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Deepa Iyer",
+      "email": "sales@regalpark.demo",
+      "password": "demo123",
+      "role": "staff",
+      "phone": "+91 68564 92968",
+      "active": true,
+      "linkedId": "stf-01"
+    },
+    {
+      "id": "usr-03",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Urban Nest Realty",
+      "email": "agent@regalpark.demo",
+      "password": "demo123",
+      "role": "agent",
+      "phone": "+91 67617 52913",
+      "active": true,
+      "linkedId": "agt-01"
+    },
+    {
+      "id": "usr-04",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Anand Channel Partners",
+      "email": "broker@regalpark.demo",
+      "password": "demo123",
+      "role": "broker",
+      "phone": "+91 71228 67785",
+      "active": true,
+      "linkedId": "brk-01"
+    },
+    {
+      "id": "usr-05",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Rohan Agarwal",
+      "email": "owner@regalpark.demo",
+      "password": "demo123",
+      "role": "owner",
+      "phone": "+91 92859 68087",
+      "active": true,
+      "linkedId": "own-02"
+    },
+    {
+      "id": "usr-06",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Revathi Bhat",
+      "email": "client@regalpark.demo",
+      "password": "demo123",
+      "role": "client",
+      "phone": "+91 67508 97137",
+      "active": true,
+      "linkedId": "cli-01"
+    },
+    {
+      "id": "usr-07",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Venkat Chandra",
+      "email": "venkat.chandra@sterlitee.in",
+      "password": "demo123",
+      "role": "staff",
+      "phone": "+91 99486 47475",
+      "active": true,
+      "linkedId": "stf-02"
+    },
+    {
+      "id": "usr-08",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Kavitha Chandra",
+      "email": "kavitha.chandra@sterlitee.in",
+      "password": "demo123",
+      "role": "staff",
+      "phone": "+91 68292 61435",
+      "active": true,
+      "linkedId": "stf-03"
+    },
+    {
+      "id": "usr-09",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Harish Hegde",
+      "email": "harish.hegde@sterlitee.in",
+      "password": "demo123",
+      "role": "staff",
+      "phone": "+91 84185 62005",
+      "active": true,
+      "linkedId": "stf-04"
+    },
+    {
+      "id": "usr-10",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Silicon Valley Homes",
+      "email": "contact@siliconvalleyhomes.in",
+      "password": "demo123",
+      "role": "agent",
+      "phone": "+91 84272 36838",
+      "active": true,
+      "linkedId": "agt-02"
+    },
+    {
+      "id": "usr-11",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "name": "Garden City Properties",
+      "email": "contact@gardencityproperties.in",
+      "password": "demo123",
+      "role": "agent",
+      "phone": "+91 63357 35329",
+      "active": true,
+      "linkedId": "agt-03"
+    }
+  ],
+  "owners": [
+    {
+      "id": "own-01",
+      "createdAt": "2025-12-27T10:00:00.000Z",
+      "code": "PO-0001",
+      "name": "Sterlitee Developers",
+      "email": "info@sterlitee.in",
+      "phone": "+91 90080 32626",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1, Bengaluru 560100",
+      "pan": "AABCS4821K",
+      "active": true
+    },
+    {
+      "id": "own-02",
+      "createdAt": "2026-01-26T10:00:00.000Z",
+      "code": "PO-0002",
+      "name": "Rohan Agarwal",
+      "email": "owner@regalpark.demo",
+      "phone": "+91 92859 68087",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "272, 1st Block, Bengaluru",
+      "pan": "AAGPR9260V",
+      "active": true
+    },
+    {
+      "id": "own-03",
+      "createdAt": "2026-02-02T10:00:00.000Z",
+      "code": "PO-0003",
+      "name": "Radhika Reddy",
+      "email": "radhika.reddy@example.in",
+      "phone": "+91 71888 29962",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "220, 5th Main, Bengaluru",
+      "pan": "AKVPR8211V",
+      "active": true
+    },
+    {
+      "id": "own-04",
+      "createdAt": "2026-02-09T10:00:00.000Z",
+      "code": "PO-0004",
+      "name": "Suresh Bhat",
+      "email": "suresh.bhat@example.in",
+      "phone": "+91 79791 50785",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "348, 1st Block, Bengaluru",
+      "pan": "ABCPS6398R",
+      "active": true
+    },
+    {
+      "id": "own-05",
+      "createdAt": "2026-02-16T10:00:00.000Z",
+      "code": "PO-0005",
+      "name": "Vihaan Nair",
+      "email": "vihaan.nair@example.in",
+      "phone": "+91 75472 49899",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "425, 3rd Cross, Bengaluru",
+      "pan": "ASVPV1562W",
+      "active": true
+    },
+    {
+      "id": "own-06",
+      "createdAt": "2026-02-23T10:00:00.000Z",
+      "code": "PO-0006",
+      "name": "Swathi Subramanian",
+      "email": "swathi.subramanian@example.in",
+      "phone": "+91 63176 57298",
+      "city": "Mysuru",
+      "state": "Karnataka",
+      "address": "11, 1st Block, Mysuru",
+      "pan": "ASVPS2067N",
+      "active": true
+    },
+    {
+      "id": "own-07",
+      "createdAt": "2026-03-02T10:00:00.000Z",
+      "code": "PO-0007",
+      "name": "Ramesh Patel",
+      "email": "ramesh.patel@example.in",
+      "phone": "+91 73534 30089",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "address": "322, 80 Feet Road, Hyderabad",
+      "pan": "ABUPR3790K",
+      "active": true
+    },
+    {
+      "id": "own-08",
+      "createdAt": "2026-03-09T10:00:00.000Z",
+      "code": "PO-0008",
+      "name": "Suresh Gowda",
+      "email": "suresh.gowda@example.in",
+      "phone": "+91 78886 15131",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "address": "148, 12th Cross, Chennai",
+      "pan": "ATPPS6072T",
+      "active": true
+    },
+    {
+      "id": "own-09",
+      "createdAt": "2026-03-16T10:00:00.000Z",
+      "code": "PO-0009",
+      "name": "Neha Prasad",
+      "email": "neha.prasad@example.in",
+      "phone": "+91 67473 32837",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "100, 3rd Cross, Bengaluru",
+      "pan": "AVFPN1828T",
+      "active": true
+    },
+    {
+      "id": "own-10",
+      "createdAt": "2026-03-23T10:00:00.000Z",
+      "code": "PO-0010",
+      "name": "Naveen Prasad",
+      "email": "naveen.prasad@example.in",
+      "phone": "+91 65025 66394",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "address": "78, 80 Feet Road, Pune",
+      "pan": "ACDPN8176C",
+      "active": true
+    },
+    {
+      "id": "own-11",
+      "createdAt": "2026-03-30T10:00:00.000Z",
+      "code": "PO-0011",
+      "name": "Anjali Reddy",
+      "email": "anjali.reddy@example.in",
+      "phone": "+91 67106 35021",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "address": "241, 12th Cross, Bengaluru",
+      "pan": "AMWPA6934F",
+      "active": false
+    },
+    {
+      "id": "own-12",
+      "createdAt": "2026-04-06T10:00:00.000Z",
+      "code": "PO-0012",
+      "name": "Anjali Murthy",
+      "email": "anjali.murthy@example.in",
+      "phone": "+91 80642 48946",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "address": "341, 3rd Cross, Coimbatore",
+      "pan": "AUBPA2455E",
+      "active": true
+    }
+  ],
+  "staff": [
+    {
+      "id": "stf-01",
+      "createdAt": "2026-01-06T10:00:00.000Z",
+      "code": "ST-0001",
+      "name": "Deepa Iyer",
+      "email": "sales@regalpark.demo",
+      "phone": "+91 68564 92968",
+      "designation": "Sales Head",
+      "approvalManager": true,
+      "requireApproval": false,
+      "isPublic": true,
+      "active": true,
+      "lastLogin": "2026-11-20T18:53:00.000Z"
+    },
+    {
+      "id": "stf-02",
+      "createdAt": "2026-01-09T10:00:00.000Z",
+      "code": "ST-0002",
+      "name": "Venkat Chandra",
+      "email": "venkat.chandra@sterlitee.in",
+      "phone": "+91 99486 47475",
+      "designation": "Sales Manager",
+      "approvalManager": true,
+      "requireApproval": false,
+      "isPublic": true,
+      "active": true,
+      "lastLogin": "2026-11-22T11:55:00.000Z"
+    },
+    {
+      "id": "stf-03",
+      "createdAt": "2026-01-12T10:00:00.000Z",
+      "code": "ST-0003",
+      "name": "Kavitha Chandra",
+      "email": "kavitha.chandra@sterlitee.in",
+      "phone": "+91 68292 61435",
+      "designation": "Sales Manager",
+      "approvalManager": false,
+      "requireApproval": false,
+      "isPublic": true,
+      "active": true,
+      "lastLogin": "2026-11-18T12:10:00.000Z"
+    },
+    {
+      "id": "stf-04",
+      "createdAt": "2026-01-15T10:00:00.000Z",
+      "code": "ST-0004",
+      "name": "Harish Hegde",
+      "email": "harish.hegde@sterlitee.in",
+      "phone": "+91 84185 62005",
+      "designation": "CRM Executive",
+      "approvalManager": false,
+      "requireApproval": true,
+      "isPublic": true,
+      "active": true,
+      "lastLogin": "2026-11-21T13:12:00.000Z"
+    },
+    {
+      "id": "stf-05",
+      "createdAt": "2026-01-18T10:00:00.000Z",
+      "code": "ST-0005",
+      "name": "Nandini Gowda",
+      "email": "nandini.gowda@sterlitee.in",
+      "phone": "+91 66702 27796",
+      "designation": "CRM Executive",
+      "approvalManager": false,
+      "requireApproval": true,
+      "isPublic": true,
+      "active": true,
+      "lastLogin": "2026-11-17T16:01:00.000Z"
+    },
+    {
+      "id": "stf-06",
+      "createdAt": "2026-01-21T10:00:00.000Z",
+      "code": "ST-0006",
+      "name": "Srinivas Singh",
+      "email": "srinivas.singh@sterlitee.in",
+      "phone": "+91 99079 07376",
+      "designation": "Site Engineer",
+      "approvalManager": false,
+      "requireApproval": true,
+      "isPublic": false,
+      "active": true,
+      "lastLogin": "2026-11-22T17:48:00.000Z"
+    },
+    {
+      "id": "stf-07",
+      "createdAt": "2026-01-24T10:00:00.000Z",
+      "code": "ST-0007",
+      "name": "Meera Murthy",
+      "email": "meera.murthy@sterlitee.in",
+      "phone": "+91 91108 35141",
+      "designation": "Accounts",
+      "approvalManager": false,
+      "requireApproval": true,
+      "isPublic": false,
+      "active": true,
+      "lastLogin": "2026-11-17T11:00:00.000Z"
+    },
+    {
+      "id": "stf-08",
+      "createdAt": "2026-01-27T10:00:00.000Z",
+      "code": "ST-0008",
+      "name": "Prakash Subramanian",
+      "email": "prakash.subramanian@sterlitee.in",
+      "phone": "+91 68129 00336",
+      "designation": "Legal",
+      "approvalManager": false,
+      "requireApproval": true,
+      "isPublic": false,
+      "active": true,
+      "lastLogin": "2026-11-20T17:43:00.000Z"
+    }
+  ],
+  "agents": [
+    {
+      "id": "agt-01",
+      "createdAt": "2026-02-15T10:00:00.000Z",
+      "code": "AG-0001",
+      "name": "Urban Nest Realty",
+      "email": "agent@regalpark.demo",
+      "phone": "+91 67617 52913",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000103",
+      "planId": "plan-1",
+      "verified": true,
+      "isPublic": true,
+      "active": true
+    },
+    {
+      "id": "agt-02",
+      "createdAt": "2026-02-20T10:00:00.000Z",
+      "code": "AG-0002",
+      "name": "Silicon Valley Homes",
+      "email": "contact@siliconvalleyhomes.in",
+      "phone": "+91 84272 36838",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000126",
+      "planId": "plan-2",
+      "verified": true,
+      "isPublic": true,
+      "active": true
+    },
+    {
+      "id": "agt-03",
+      "createdAt": "2026-02-25T10:00:00.000Z",
+      "code": "AG-0003",
+      "name": "Garden City Properties",
+      "email": "contact@gardencityproperties.in",
+      "phone": "+91 63357 35329",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000140",
+      "planId": "plan-3",
+      "verified": true,
+      "isPublic": true,
+      "active": true
+    },
+    {
+      "id": "agt-04",
+      "createdAt": "2026-03-02T10:00:00.000Z",
+      "code": "AG-0004",
+      "name": "Namma Bengaluru Estates",
+      "email": "contact@nammabengaluruestates.in",
+      "phone": "+91 89064 73569",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000157",
+      "planId": "plan-1",
+      "verified": true,
+      "isPublic": true,
+      "active": true
+    },
+    {
+      "id": "agt-05",
+      "createdAt": "2026-03-07T10:00:00.000Z",
+      "code": "AG-0005",
+      "name": "Lakeview Realtors",
+      "email": "contact@lakeviewrealtors.in",
+      "phone": "+91 63050 61098",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000175",
+      "planId": "plan-2",
+      "verified": false,
+      "isPublic": true,
+      "active": true
+    },
+    {
+      "id": "agt-06",
+      "createdAt": "2026-03-12T10:00:00.000Z",
+      "code": "AG-0006",
+      "name": "EC Prime Properties",
+      "email": "contact@ecprimeproperties.in",
+      "phone": "+91 67700 54369",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000188",
+      "planId": "plan-3",
+      "verified": true,
+      "isPublic": false,
+      "active": false
+    }
+  ],
+  "brokers": [
+    {
+      "id": "brk-01",
+      "createdAt": "2026-03-07T10:00:00.000Z",
+      "code": "BB-0001",
+      "name": "Anand Channel Partners",
+      "email": "broker@regalpark.demo",
+      "phone": "+91 71228 67785",
+      "city": "Hosur",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000309",
+      "planId": "plan-2",
+      "active": true
+    },
+    {
+      "id": "brk-02",
+      "createdAt": "2026-03-13T10:00:00.000Z",
+      "code": "BB-0002",
+      "name": "Skyline Business Brokers",
+      "email": "hello@skylinebusinessbrokers.in",
+      "phone": "+91 76360 55062",
+      "city": "Bengaluru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000327",
+      "planId": "plan-3",
+      "active": true
+    },
+    {
+      "id": "brk-03",
+      "createdAt": "2026-03-19T10:00:00.000Z",
+      "code": "BB-0003",
+      "name": "Orchid Realty Partners",
+      "email": "hello@orchidrealtypartners.in",
+      "phone": "+91 72143 93645",
+      "city": "Hosur",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000355",
+      "planId": "plan-1",
+      "active": true
+    },
+    {
+      "id": "brk-04",
+      "createdAt": "2026-03-25T10:00:00.000Z",
+      "code": "BB-0004",
+      "name": "Metro Deal Makers",
+      "email": "hello@metrodealmakers.in",
+      "phone": "+91 93994 78313",
+      "city": "Hosur",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000378",
+      "planId": "plan-2",
+      "active": true
+    },
+    {
+      "id": "brk-05",
+      "createdAt": "2026-03-31T10:00:00.000Z",
+      "code": "BB-0005",
+      "name": "Trident Property Advisors",
+      "email": "hello@tridentpropertyadvisors.in",
+      "phone": "+91 69350 68092",
+      "city": "Mysuru",
+      "reraAgentNo": "PRM/KA/RERA/1251/310/AG/000398",
+      "planId": "plan-3",
+      "active": true
+    }
+  ],
+  "clients": [
+    {
+      "id": "cli-01",
+      "createdAt": "2026-05-06T10:00:00.000Z",
+      "code": "CL-0001",
+      "name": "Revathi Bhat",
+      "email": "client@regalpark.demo",
+      "phone": "+91 67508 97137",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-02",
+      "createdAt": "2026-05-10T10:00:00.000Z",
+      "code": "CL-0002",
+      "name": "Manoj Singh",
+      "email": "manoj.singh@example.com",
+      "phone": "+91 97578 82435",
+      "city": "Bengaluru",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-03",
+      "createdAt": "2026-05-14T10:00:00.000Z",
+      "code": "CL-0003",
+      "name": "Vihaan Sharma",
+      "email": "vihaan.sharma@example.com",
+      "phone": "+91 69178 68908",
+      "city": "Dubai",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-04",
+      "createdAt": "2026-05-18T10:00:00.000Z",
+      "code": "CL-0004",
+      "name": "Radhika Chandra",
+      "email": "radhika.chandra@example.com",
+      "phone": "+91 62900 28922",
+      "city": "Bengaluru",
+      "type": "Tenant",
+      "company": "Amazon"
+    },
+    {
+      "id": "cli-05",
+      "createdAt": "2026-05-22T10:00:00.000Z",
+      "code": "CL-0005",
+      "name": "Ramesh Singh",
+      "email": "ramesh.singh@example.com",
+      "phone": "+91 85343 72663",
+      "city": "Hyderabad",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-06",
+      "createdAt": "2026-05-26T10:00:00.000Z",
+      "code": "CL-0006",
+      "name": "Prakash Raman",
+      "email": "prakash.raman@example.com",
+      "phone": "+91 92512 50760",
+      "city": "Bengaluru",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-07",
+      "createdAt": "2026-05-30T10:00:00.000Z",
+      "code": "CL-0007",
+      "name": "Bhavana Sharma",
+      "email": "bhavana.sharma@example.com",
+      "phone": "+91 95793 98133",
+      "city": "Bengaluru",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-08",
+      "createdAt": "2026-06-03T10:00:00.000Z",
+      "code": "CL-0008",
+      "name": "Aarav Naidu",
+      "email": "aarav.naidu@example.com",
+      "phone": "+91 67252 71975",
+      "city": "Chennai",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-09",
+      "createdAt": "2026-06-07T10:00:00.000Z",
+      "code": "CL-0009",
+      "name": "Nandini Banerjee",
+      "email": "nandini.banerjee@example.com",
+      "phone": "+91 74578 32520",
+      "city": "Chennai",
+      "type": "Tenant"
+    },
+    {
+      "id": "cli-10",
+      "createdAt": "2026-06-11T10:00:00.000Z",
+      "code": "CL-0010",
+      "name": "Divya Subramanian",
+      "email": "divya.subramanian@example.com",
+      "phone": "+91 60958 17060",
+      "city": "Dubai",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-11",
+      "createdAt": "2026-06-15T10:00:00.000Z",
+      "code": "CL-0011",
+      "name": "Sowmya Joshi",
+      "email": "sowmya.joshi@example.com",
+      "phone": "+91 71624 59171",
+      "city": "Chennai",
+      "type": "Buyer",
+      "company": "Accenture"
+    },
+    {
+      "id": "cli-12",
+      "createdAt": "2026-06-19T10:00:00.000Z",
+      "code": "CL-0012",
+      "name": "Pooja Patel",
+      "email": "pooja.patel@example.com",
+      "phone": "+91 60225 84944",
+      "city": "Dubai",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-13",
+      "createdAt": "2026-06-23T10:00:00.000Z",
+      "code": "CL-0013",
+      "name": "Srinivas Kumar",
+      "email": "srinivas.kumar@example.com",
+      "phone": "+91 84559 59555",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-14",
+      "createdAt": "2026-06-27T10:00:00.000Z",
+      "code": "CL-0014",
+      "name": "Deepa Nair",
+      "email": "deepa.nair@example.com",
+      "phone": "+91 94173 47191",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-15",
+      "createdAt": "2026-07-01T10:00:00.000Z",
+      "code": "CL-0015",
+      "name": "Aishwarya Kapoor",
+      "email": "aishwarya.kapoor@example.com",
+      "phone": "+91 89496 82003",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-16",
+      "createdAt": "2026-07-05T10:00:00.000Z",
+      "code": "CL-0016",
+      "name": "Aishwarya Rao",
+      "email": "aishwarya.rao@example.com",
+      "phone": "+91 97364 28142",
+      "city": "Chennai",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-17",
+      "createdAt": "2026-07-09T10:00:00.000Z",
+      "code": "CL-0017",
+      "name": "Kavitha Shetty",
+      "email": "kavitha.shetty@example.com",
+      "phone": "+91 98245 03074",
+      "city": "Chennai",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-18",
+      "createdAt": "2026-07-13T10:00:00.000Z",
+      "code": "CL-0018",
+      "name": "Priya Bhat",
+      "email": "priya.bhat@example.com",
+      "phone": "+91 95953 82992",
+      "city": "Bengaluru",
+      "type": "Buyer",
+      "company": "Infosys"
+    },
+    {
+      "id": "cli-19",
+      "createdAt": "2026-07-17T10:00:00.000Z",
+      "code": "CL-0019",
+      "name": "Sandeep Iyer",
+      "email": "sandeep.iyer@example.com",
+      "phone": "+91 74114 59915",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-20",
+      "createdAt": "2026-07-21T10:00:00.000Z",
+      "code": "CL-0020",
+      "name": "Prakash Bhat",
+      "email": "prakash.bhat@example.com",
+      "phone": "+91 93503 65784",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-21",
+      "createdAt": "2026-07-25T10:00:00.000Z",
+      "code": "CL-0021",
+      "name": "Radhika Sharma",
+      "email": "radhika.sharma@example.com",
+      "phone": "+91 77950 30864",
+      "city": "Dubai",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-22",
+      "createdAt": "2026-07-29T10:00:00.000Z",
+      "code": "CL-0022",
+      "name": "Arjun Sharma",
+      "email": "arjun.sharma@example.com",
+      "phone": "+91 63467 47544",
+      "city": "Bengaluru",
+      "type": "Buyer"
+    },
+    {
+      "id": "cli-23",
+      "createdAt": "2026-08-02T10:00:00.000Z",
+      "code": "CL-0023",
+      "name": "Shruti Subramanian",
+      "email": "shruti.subramanian@example.com",
+      "phone": "+91 75136 75778",
+      "city": "Dubai",
+      "type": "Investor",
+      "company": "Infosys"
+    },
+    {
+      "id": "cli-24",
+      "createdAt": "2026-08-06T10:00:00.000Z",
+      "code": "CL-0024",
+      "name": "Suresh Raman",
+      "email": "suresh.raman@example.com",
+      "phone": "+91 81067 70912",
+      "city": "Bengaluru",
+      "type": "Investor",
+      "company": "Emirates NBD"
+    },
+    {
+      "id": "cli-25",
+      "createdAt": "2026-08-10T10:00:00.000Z",
+      "code": "CL-0025",
+      "name": "Girish Naidu",
+      "email": "girish.naidu@example.com",
+      "phone": "+91 64474 94318",
+      "city": "Bengaluru",
+      "type": "Investor",
+      "company": "Amazon"
+    },
+    {
+      "id": "cli-26",
+      "createdAt": "2026-08-14T10:00:00.000Z",
+      "code": "CL-0026",
+      "name": "Shruti Shetty",
+      "email": "shruti.shetty@example.com",
+      "phone": "+91 86302 04359",
+      "city": "Chennai",
+      "type": "Investor",
+      "company": "Infosys"
+    },
+    {
+      "id": "cli-27",
+      "createdAt": "2026-08-18T10:00:00.000Z",
+      "code": "CL-0027",
+      "name": "Harish Agarwal",
+      "email": "harish.agarwal@example.com",
+      "phone": "+91 92692 54891",
+      "city": "Bengaluru",
+      "type": "Investor",
+      "company": "Amazon"
+    },
+    {
+      "id": "cli-28",
+      "createdAt": "2026-08-22T10:00:00.000Z",
+      "code": "CL-0028",
+      "name": "Mahesh Sharma",
+      "email": "mahesh.sharma@example.com",
+      "phone": "+91 94167 05463",
+      "city": "Chennai",
+      "type": "Investor",
+      "company": "Wipro"
+    },
+    {
+      "id": "cli-29",
+      "createdAt": "2026-08-26T10:00:00.000Z",
+      "code": "CL-0029",
+      "name": "Vikram Prasad",
+      "email": "vikram.prasad@example.com",
+      "phone": "+91 60521 05390",
+      "city": "Bengaluru",
+      "type": "Investor",
+      "company": "Self-employed"
+    },
+    {
+      "id": "cli-30",
+      "createdAt": "2026-08-30T10:00:00.000Z",
+      "code": "CL-0030",
+      "name": "Kavitha Hegde",
+      "email": "kavitha.hegde@example.com",
+      "phone": "+91 73909 75123",
+      "city": "Bengaluru",
+      "type": "Investor",
+      "company": "Amazon"
+    }
+  ],
+  "properties": [
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 17,
+          "lengthFt": 25
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 17
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 36300
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Riora Villa R-01",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Sold",
+      "transactionType": "Sale",
+      "price": 45400000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3154,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "South",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81864,
+      "lng": 77.65926,
+      "amenities": [
+        "Clubhouse",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-001",
+      "code": "SRP-0001",
+      "createdAt": "2026-08-31T12:36:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 17,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 12
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 35700
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Riora Villa R-02",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Pending Sale",
+      "transactionType": "Sale",
+      "price": 44600000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3144,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "South-West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81922,
+      "lng": 77.65818,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-002",
+      "code": "SRP-0002",
+      "createdAt": "2026-08-23T16:06:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 26
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 35000
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 13100
+        }
+      ],
+      "name": "Riora Villa R-03",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 43800000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3226,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "South",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81834,
+      "lng": 77.65978,
+      "amenities": [
+        "Clubhouse",
+        "Skating Rink",
+        "Yoga Deck",
+        "Jungle Gym",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-003",
+      "code": "SRP-0003",
+      "createdAt": "2026-06-26T13:32:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 35900
+        }
+      ],
+      "name": "Riora Villa R-04",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Closed Sale",
+      "transactionType": "Sale",
+      "price": 44900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3242,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8197,
+      "lng": 77.65767,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Jungle Gym",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-004",
+      "code": "SRP-0004",
+      "createdAt": "2026-04-22T12:39:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 23
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 35600
+        }
+      ],
+      "name": "Riora Villa R-05",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 44500000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3189,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81961,
+      "lng": 77.66011,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-005",
+      "code": "SRP-0005",
+      "createdAt": "2026-05-04T15:56:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 36200
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 13600
+        }
+      ],
+      "name": "Riora Villa R-06",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Backup",
+      "transactionType": "Sale",
+      "price": 45300000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3208,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81864,
+      "lng": 77.65955,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-006",
+      "code": "SRP-0006",
+      "createdAt": "2026-05-15T17:13:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 35900
+        }
+      ],
+      "name": "Riora Villa R-07",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 44900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3174,
+      "plotSqft": 1500,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.82,
+      "lng": 77.65967,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Jungle Gym",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 30x50 plot (1500 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-007",
+      "code": "SRP-0007",
+      "createdAt": "2026-05-08T09:08:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 23
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 41500
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 15600
+        }
+      ],
+      "name": "Avira Villa A-01",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 51900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3631,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81868,
+      "lng": 77.65848,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-008",
+      "code": "SRP-0008",
+      "createdAt": "2026-02-14T09:23:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 19,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 41400
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 15500
+        }
+      ],
+      "name": "Avira Villa A-02",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Sold",
+      "transactionType": "Sale",
+      "price": 51700000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3684,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.82047,
+      "lng": 77.65971,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-009",
+      "code": "SRP-0009",
+      "createdAt": "2026-02-15T10:37:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 17
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 39800
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Avira Villa A-03",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Pending Sale",
+      "transactionType": "Sale",
+      "price": 49800000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3687,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8185,
+      "lng": 77.6586,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-010",
+      "code": "SRP-0010",
+      "createdAt": "2026-03-29T12:30:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 26
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 40700
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Avira Villa A-04",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 50900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3665,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81849,
+      "lng": 77.65838,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-011",
+      "code": "SRP-0011",
+      "createdAt": "2026-06-19T15:05:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 41000
+        }
+      ],
+      "name": "Avira Villa A-05",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 51200000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3675,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "North-East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8193,
+      "lng": 77.65974,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-012",
+      "code": "SRP-0012",
+      "createdAt": "2026-07-28T15:13:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 26
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 40200
+        }
+      ],
+      "name": "Avira Villa A-06",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Backup",
+      "transactionType": "Sale",
+      "price": 50300000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3694,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8209,
+      "lng": 77.65827,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-01",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-013",
+      "code": "SRP-0013",
+      "createdAt": "2026-05-03T11:27:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 18
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 17
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 39900
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Avira Villa A-07",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 49900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3649,
+      "plotSqft": 1750,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81897,
+      "lng": 77.65986,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x50 plot (1750 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-014",
+      "code": "SRP-0014",
+      "createdAt": "2026-08-17T17:00:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 44600
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Selora Villa S-01",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 55800000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3928,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81917,
+      "lng": 77.65772,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Kids Play Area",
+        "Multipurpose Lawn",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-06",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-015",
+      "code": "SRP-0015",
+      "createdAt": "2026-02-03T15:15:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 15,
+          "lengthFt": 18
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 43800
+        }
+      ],
+      "name": "Selora Villa S-02",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Sold",
+      "transactionType": "Sale",
+      "price": 54700000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3901,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81854,
+      "lng": 77.65869,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-05",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-016",
+      "code": "SRP-0016",
+      "createdAt": "2026-06-23T14:12:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 19,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 44300
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Selora Villa S-03",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Pending Sale",
+      "transactionType": "Sale",
+      "price": 55400000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3903,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "North",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81968,
+      "lng": 77.65953,
+      "amenities": [
+        "Clubhouse",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-03",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-017",
+      "code": "SRP-0017",
+      "createdAt": "2026-08-01T10:24:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 15
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 45800
+        }
+      ],
+      "name": "Selora Villa S-04",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Closed Sale",
+      "transactionType": "Sale",
+      "price": 57300000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3974,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8192,
+      "lng": 77.65928,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-018",
+      "code": "SRP-0018",
+      "createdAt": "2026-02-14T17:51:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 12
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 46000
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 17300
+        }
+      ],
+      "name": "Selora Villa S-05",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 57500000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3987,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "South",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81905,
+      "lng": 77.65997,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-05",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-019",
+      "code": "SRP-0019",
+      "createdAt": "2026-04-03T09:21:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 43500
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Selora Villa S-06",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 54400000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3894,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81865,
+      "lng": 77.65915,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-05",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-020",
+      "code": "SRP-0020",
+      "createdAt": "2026-08-02T17:30:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 17,
+          "lengthFt": 26
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 43900
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 16500
+        }
+      ],
+      "name": "Selora Villa S-07",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 54900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 6500,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3994,
+      "plotSqft": 1925,
+      "floors": 3,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81918,
+      "lng": 77.65832,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-02",
+      "approval": "approved",
+      "description": "4BHK premium villa on a 35x55 plot (1925 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-021",
+      "code": "SRP-0021",
+      "createdAt": "2026-03-23T11:55:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 12
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 49800
+        }
+      ],
+      "name": "Elora Villa E-01",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 62300000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4377,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.82015,
+      "lng": 77.65858,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-022",
+      "code": "SRP-0022",
+      "createdAt": "2026-09-23T11:47:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 52700
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Elora Villa E-02",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Pending Sale",
+      "transactionType": "Sale",
+      "price": 65900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4401,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "South",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81987,
+      "lng": 77.65997,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Skating Rink",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-04",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-023",
+      "code": "SRP-0023",
+      "createdAt": "2026-03-16T13:37:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 19,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 51400
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 19300
+        }
+      ],
+      "name": "Elora Villa E-03",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 64300000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4366,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81988,
+      "lng": 77.65763,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-05",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-024",
+      "code": "SRP-0024",
+      "createdAt": "2026-04-08T10:11:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 15,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 49400
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        },
+        {
+          "label": "Maintenance",
+          "amount": 18500
+        }
+      ],
+      "name": "Elora Villa E-04",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 61800000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4423,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "South-West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81831,
+      "lng": 77.66016,
+      "amenities": [
+        "Clubhouse",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-06",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-025",
+      "code": "SRP-0025",
+      "createdAt": "2026-06-17T12:24:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 26
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 16
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 50300
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Elora Villa E-05",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Pending Sale",
+      "transactionType": "Sale",
+      "price": 62900000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4439,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.82085,
+      "lng": 77.65946,
+      "amenities": [
+        "Clubhouse",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Jungle Gym",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-026",
+      "code": "SRP-0026",
+      "createdAt": "2026-08-09T09:17:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 17
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 12
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 52100
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Elora Villa E-06",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 65100000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4414,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Under Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81862,
+      "lng": 77.65975,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Yoga Deck",
+        "Aroma Garden",
+        "Multipurpose Lawn",
+        "EV Charging",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "agentId": "agt-03",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-027",
+      "code": "SRP-0027",
+      "createdAt": "2026-05-24T13:57:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 11,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 49600
+        }
+      ],
+      "name": "Elora Villa E-07",
+      "project": "Sterlitee Regal Park",
+      "listingType": "Housing",
+      "style": "Villa",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 62000000,
+      "reservationAmount": 500000,
+      "maintenanceFee": 7000,
+      "beds": 5,
+      "baths": 6,
+      "areaSqft": 4418,
+      "plotSqft": 2000,
+      "floors": 3,
+      "facing": "West",
+      "furnished": "Unfurnished",
+      "condition": "Pre Construction",
+      "newConstruction": true,
+      "possessionDate": "2028-12-31",
+      "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.81833,
+      "lng": 77.6578,
+      "amenities": [
+        "Clubhouse",
+        "Tennis Court",
+        "Basketball Court",
+        "Skating Rink",
+        "Yoga Deck",
+        "Kids Play Area",
+        "Aroma Garden",
+        "10 Landscaped Parks",
+        "24x7 Security"
+      ],
+      "ownerId": "own-01",
+      "brokerId": "brk-05",
+      "approval": "approved",
+      "description": "5BHK premium villa on a 40x50 plot (2000 sq ft) in Sterlitee Regal Park. Your Private World, Nestled in Electronic City.",
+      "id": "prp-028",
+      "code": "SRP-0028",
+      "createdAt": "2026-07-19T17:37:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 15
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 7600
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        }
+      ],
+      "name": "Koramangala 3BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 95000,
+      "rentalPrice": 95000,
+      "rentalType": "Month(s)",
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 1650,
+      "facing": "West",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2017,
+      "address": "151, Koramangala",
+      "city": "Bengaluru",
+      "zip": "560034",
+      "lat": 12.93298,
+      "lng": 77.62745,
+      "amenities": [
+        "Covered Parking",
+        "Power Backup",
+        "Gym",
+        "Intercom"
+      ],
+      "ownerId": "own-04",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "Koramangala 3BHK Apartment in Koramangala, Bengaluru - available for lease.",
+      "id": "prp-029",
+      "code": "SRP-0029",
+      "createdAt": "2026-08-21T16:39:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 3800
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        }
+      ],
+      "name": "HSR Layout 2BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 48000,
+      "rentalPrice": 48000,
+      "rentalType": "Month(s)",
+      "beds": 2,
+      "baths": 2,
+      "areaSqft": 1250,
+      "facing": "North-East",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2013,
+      "address": "117, HSR Layout",
+      "city": "Bengaluru",
+      "zip": "560102",
+      "lat": 12.91758,
+      "lng": 77.64331,
+      "amenities": [
+        "Covered Parking",
+        "24x7 Security",
+        "Swimming Pool",
+        "Intercom",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-02",
+      "agentId": "agt-03",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "HSR Layout 2BHK Apartment in HSR Layout, Bengaluru - available for lease.",
+      "id": "prp-030",
+      "code": "SRP-0030",
+      "createdAt": "2026-03-27T09:57:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 5000
+        }
+      ],
+      "name": "Whitefield 3BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 62000,
+      "rentalPrice": 62000,
+      "rentalType": "Month(s)",
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 1800,
+      "facing": "North-East",
+      "furnished": "Fully Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2018,
+      "address": "232, Whitefield",
+      "city": "Bengaluru",
+      "zip": "560066",
+      "lat": 12.97102,
+      "lng": 77.75218,
+      "amenities": [
+        "Swimming Pool",
+        "Kids Play Area",
+        "Intercom",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-02",
+      "agentId": "agt-04",
+      "approval": "approved",
+      "description": "Whitefield 3BHK Apartment in Whitefield, Bengaluru - available for lease.",
+      "id": "prp-031",
+      "code": "SRP-0031",
+      "createdAt": "2026-01-30T12:00:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 15
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 2200
+        }
+      ],
+      "name": "Electronic City 2BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 28000,
+      "rentalPrice": 28000,
+      "rentalType": "Month(s)",
+      "beds": 2,
+      "baths": 2,
+      "areaSqft": 1100,
+      "facing": "East",
+      "furnished": "Unfurnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2015,
+      "address": "191, Electronic City",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.84622,
+      "lng": 77.66269,
+      "amenities": [
+        "Lift",
+        "Power Backup",
+        "24x7 Security",
+        "Swimming Pool",
+        "Intercom",
+        "Rainwater Harvesting"
+      ],
+      "ownerId": "own-02",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "Electronic City 2BHK Apartment in Electronic City, Bengaluru - available for lease.",
+      "id": "prp-032",
+      "code": "SRP-0032",
+      "createdAt": "2026-03-04T12:53:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 15
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 6200
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        }
+      ],
+      "name": "Sarjapur Road 3BHK Row House",
+      "listingType": "Housing",
+      "style": "Row House",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 78000,
+      "rentalPrice": 78000,
+      "rentalType": "Month(s)",
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 2100,
+      "floors": 2,
+      "facing": "South-West",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2012,
+      "address": "162, Sarjapur Road",
+      "city": "Bengaluru",
+      "zip": "560035",
+      "lat": 12.91284,
+      "lng": 77.68552,
+      "amenities": [
+        "Lift",
+        "Covered Parking",
+        "Power Backup",
+        "Gym",
+        "Swimming Pool",
+        "Kids Play Area",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-02",
+      "agentId": "agt-06",
+      "approval": "approved",
+      "description": "Sarjapur Road 3BHK Row House in Sarjapur Road, Bengaluru - available for lease.",
+      "id": "prp-033",
+      "code": "SRP-0033",
+      "createdAt": "2026-04-27T16:32:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "internal",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 20,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 20000
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        },
+        {
+          "label": "Property tax",
+          "amount": 37500
+        }
+      ],
+      "name": "Hebbal 4BHK Penthouse",
+      "listingType": "Housing",
+      "style": "Penthouse",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 250000,
+      "rentalPrice": 250000,
+      "rentalType": "Month(s)",
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3400,
+      "facing": "South",
+      "furnished": "Fully Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2012,
+      "address": "127, Hebbal",
+      "city": "Bengaluru",
+      "zip": "560024",
+      "lat": 13.02994,
+      "lng": 77.59302,
+      "amenities": [
+        "Lift",
+        "Gym",
+        "Swimming Pool",
+        "Kids Play Area",
+        "Intercom",
+        "Rainwater Harvesting"
+      ],
+      "ownerId": "own-05",
+      "agentId": "agt-02",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "Hebbal 4BHK Penthouse in Hebbal, Bengaluru - available for lease.",
+      "id": "prp-034",
+      "code": "SRP-0034",
+      "createdAt": "2026-06-25T16:32:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 25
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 18
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 2600
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        }
+      ],
+      "name": "Bannerghatta Road 2BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 32000,
+      "rentalPrice": 32000,
+      "rentalType": "Month(s)",
+      "beds": 2,
+      "baths": 2,
+      "areaSqft": 1180,
+      "facing": "North",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2020,
+      "address": "138, Bannerghatta Road",
+      "city": "Bengaluru",
+      "zip": "560076",
+      "lat": 12.88795,
+      "lng": 77.59856,
+      "amenities": [
+        "Lift",
+        "Clubhouse",
+        "Intercom",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-06",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "Bannerghatta Road 2BHK Apartment in Bannerghatta Road, Bengaluru - available for lease.",
+      "id": "prp-035",
+      "code": "SRP-0035",
+      "createdAt": "2026-03-20T11:58:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 9600
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        },
+        {
+          "label": "Property tax",
+          "amount": 18000
+        }
+      ],
+      "name": "Koramangala Office Space",
+      "listingType": "Business",
+      "style": "Office",
+      "status": "Rented",
+      "transactionType": "Rent",
+      "price": 120000,
+      "rentalPrice": 120000,
+      "rentalType": "Month(s)",
+      "beds": 0,
+      "baths": 2,
+      "areaSqft": 1400,
+      "facing": "South",
+      "furnished": "Fully Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2015,
+      "address": "32, Koramangala",
+      "city": "Bengaluru",
+      "zip": "560034",
+      "lat": 12.9315,
+      "lng": 77.62469,
+      "amenities": [
+        "Lift",
+        "Gym",
+        "Swimming Pool",
+        "Clubhouse",
+        "Kids Play Area",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-07",
+      "agentId": "agt-04",
+      "approval": "approved",
+      "description": "Koramangala Office Space in Koramangala, Bengaluru - available for lease.",
+      "id": "prp-036",
+      "code": "SRP-0036",
+      "createdAt": "2026-09-22T10:26:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 19
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 16
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 6800
+        }
+      ],
+      "name": "Whitefield Commercial Shop",
+      "listingType": "Business",
+      "style": "Commercial",
+      "status": "Active",
+      "transactionType": "Rent",
+      "price": 85000,
+      "rentalPrice": 85000,
+      "rentalType": "Month(s)",
+      "beds": 0,
+      "baths": 2,
+      "areaSqft": 900,
+      "facing": "North-West",
+      "furnished": "Unfurnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2020,
+      "address": "156, Whitefield",
+      "city": "Bengaluru",
+      "zip": "560066",
+      "lat": 12.96672,
+      "lng": 77.75559,
+      "amenities": [
+        "Lift",
+        "Covered Parking",
+        "Power Backup",
+        "24x7 Security",
+        "Gym",
+        "Swimming Pool",
+        "Clubhouse",
+        "Intercom"
+      ],
+      "ownerId": "own-08",
+      "agentId": "agt-05",
+      "approval": "approved",
+      "description": "Whitefield Commercial Shop in Whitefield, Bengaluru - available for lease.",
+      "id": "prp-037",
+      "code": "SRP-0037",
+      "createdAt": "2026-04-11T14:52:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 13,
+          "lengthFt": 13
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 17,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 8800
+        },
+        {
+          "label": "BBMP khata fee",
+          "amount": 4500
+        }
+      ],
+      "name": "HSR Layout 3BHK Duplex",
+      "listingType": "Housing",
+      "style": "Duplex",
+      "status": "Active",
+      "transactionType": "Rent",
+      "price": 110000,
+      "rentalPrice": 110000,
+      "rentalType": "Month(s)",
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 2200,
+      "floors": 2,
+      "facing": "West",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2017,
+      "address": "224, HSR Layout",
+      "city": "Bengaluru",
+      "zip": "560102",
+      "lat": 12.90792,
+      "lng": 77.63853,
+      "amenities": [
+        "Power Backup",
+        "24x7 Security",
+        "Clubhouse",
+        "Rainwater Harvesting"
+      ],
+      "ownerId": "own-09",
+      "agentId": "agt-01",
+      "brokerId": "brk-03",
+      "approval": "approved",
+      "description": "HSR Layout 3BHK Duplex in HSR Layout, Bengaluru - available for lease.",
+      "id": "prp-038",
+      "code": "SRP-0038",
+      "createdAt": "2026-01-27T11:07:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 16,
+          "lengthFt": 25
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 16
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Maintenance",
+          "amount": 2400
+        }
+      ],
+      "name": "Electronic City 2BHK Flat",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Pending",
+      "transactionType": "Rent",
+      "price": 30000,
+      "rentalPrice": 30000,
+      "rentalType": "Month(s)",
+      "beds": 2,
+      "baths": 2,
+      "areaSqft": 1050,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2022,
+      "address": "53, Electronic City",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.84912,
+      "lng": 77.66595,
+      "amenities": [
+        "Covered Parking",
+        "24x7 Security",
+        "Gym",
+        "Kids Play Area",
+        "Intercom",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-10",
+      "agentId": "agt-02",
+      "approval": "pending",
+      "description": "Electronic City 2BHK Flat in Electronic City, Bengaluru - available for lease.",
+      "id": "prp-039",
+      "code": "SRP-0039",
+      "createdAt": "2026-03-10T16:53:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 20
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 11,
+          "lengthFt": 16
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 17
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 13,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 11600
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Sarjapur Road 3BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Pending",
+      "transactionType": "Sale",
+      "price": 14500000,
+      "maintenanceFee": 5400,
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 1720,
+      "facing": "South-West",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2012,
+      "address": "147, Sarjapur Road",
+      "city": "Bengaluru",
+      "zip": "560035",
+      "lat": 12.91109,
+      "lng": 77.69297,
+      "amenities": [
+        "Covered Parking",
+        "Power Backup",
+        "Kids Play Area",
+        "Intercom",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-10",
+      "agentId": "agt-03",
+      "approval": "pending",
+      "description": "Sarjapur Road 3BHK Apartment in Sarjapur Road, Bengaluru - resale.",
+      "id": "prp-040",
+      "code": "SRP-0040",
+      "createdAt": "2026-04-23T11:05:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 18,
+          "lengthFt": 24
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 25600
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Whitefield 4BHK Row House",
+      "listingType": "Housing",
+      "style": "Row House",
+      "status": "Pending",
+      "transactionType": "Sale",
+      "price": 32000000,
+      "maintenanceFee": 6200,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 2900,
+      "floors": 2,
+      "facing": "South-East",
+      "furnished": "Unfurnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2017,
+      "address": "138, Whitefield",
+      "city": "Bengaluru",
+      "zip": "560066",
+      "lat": 12.9655,
+      "lng": 77.74554,
+      "amenities": [
+        "Covered Parking",
+        "Power Backup",
+        "Gym",
+        "Swimming Pool",
+        "Clubhouse",
+        "Rainwater Harvesting"
+      ],
+      "ownerId": "own-11",
+      "agentId": "agt-01",
+      "approval": "pending",
+      "description": "Whitefield 4BHK Row House in Whitefield, Bengaluru - resale.",
+      "id": "prp-041",
+      "code": "SRP-0041",
+      "createdAt": "2026-08-10T13:33:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 14,
+          "lengthFt": 21
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 18
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 12,
+          "lengthFt": 13
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 14800
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Hebbal 3BHK Apartment",
+      "listingType": "Housing",
+      "style": "Apartment",
+      "status": "Pending",
+      "transactionType": "Sale",
+      "price": 18500000,
+      "maintenanceFee": 5400,
+      "beds": 3,
+      "baths": 4,
+      "areaSqft": 1650,
+      "facing": "West",
+      "furnished": "Semi-Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2012,
+      "address": "156, Hebbal",
+      "city": "Bengaluru",
+      "zip": "560024",
+      "lat": 13.04064,
+      "lng": 77.59325,
+      "amenities": [
+        "Lift",
+        "Covered Parking",
+        "Power Backup",
+        "Gym",
+        "Swimming Pool",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-12",
+      "agentId": "agt-05",
+      "brokerId": "brk-03",
+      "approval": "pending",
+      "description": "Hebbal 3BHK Apartment in Hebbal, Bengaluru - resale.",
+      "id": "prp-042",
+      "code": "SRP-0042",
+      "createdAt": "2026-05-31T15:40:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 15,
+          "lengthFt": 25
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 10,
+          "lengthFt": 12
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 15,
+          "lengthFt": 14
+        },
+        {
+          "type": "Bedroom 2",
+          "level": "First",
+          "widthFt": 14,
+          "lengthFt": 15
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 32800
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Koramangala 4BHK Duplex",
+      "listingType": "Housing",
+      "style": "Duplex",
+      "status": "Pending",
+      "transactionType": "Sale",
+      "price": 41000000,
+      "maintenanceFee": 6200,
+      "beds": 4,
+      "baths": 5,
+      "areaSqft": 3100,
+      "floors": 2,
+      "facing": "West",
+      "furnished": "Fully Furnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2016,
+      "address": "176, Koramangala",
+      "city": "Bengaluru",
+      "zip": "560034",
+      "lat": 12.93918,
+      "lng": 77.62577,
+      "amenities": [
+        "Covered Parking",
+        "Power Backup",
+        "24x7 Security",
+        "Swimming Pool",
+        "Kids Play Area",
+        "Intercom",
+        "Rainwater Harvesting"
+      ],
+      "ownerId": "own-03",
+      "agentId": "agt-06",
+      "approval": "rejected",
+      "rejectReason": "Ownership documents incomplete - please attach the registered sale deed and khata certificate.",
+      "description": "Koramangala 4BHK Duplex in Koramangala, Bengaluru - resale.",
+      "id": "prp-043",
+      "code": "SRP-0043",
+      "createdAt": "2026-03-02T16:36:00.000Z"
+    },
+    {
+      "state": "Karnataka",
+      "listingPrivacy": "public",
+      "rooms": [
+        {
+          "type": "Living Room",
+          "level": "Ground",
+          "widthFt": 17,
+          "lengthFt": 22
+        },
+        {
+          "type": "Kitchen",
+          "level": "Ground",
+          "widthFt": 12,
+          "lengthFt": 14
+        },
+        {
+          "type": "Master Bedroom",
+          "level": "First",
+          "widthFt": 16,
+          "lengthFt": 14
+        }
+      ],
+      "expenses": [
+        {
+          "label": "Property tax",
+          "amount": 17600
+        },
+        {
+          "label": "BBMP khata",
+          "amount": 25000
+        }
+      ],
+      "name": "Electronic City Office Floor",
+      "listingType": "Business",
+      "style": "Office",
+      "status": "Active",
+      "transactionType": "Sale",
+      "price": 22000000,
+      "maintenanceFee": 3000,
+      "beds": 0,
+      "baths": 2,
+      "areaSqft": 2400,
+      "facing": "East",
+      "furnished": "Unfurnished",
+      "condition": "Completed",
+      "newConstruction": false,
+      "yearBuilt": 2016,
+      "address": "104, Electronic City",
+      "city": "Bengaluru",
+      "zip": "560100",
+      "lat": 12.8398,
+      "lng": 77.65496,
+      "amenities": [
+        "Lift",
+        "Covered Parking",
+        "24x7 Security",
+        "Gym",
+        "Swimming Pool",
+        "Clubhouse",
+        "Rainwater Harvesting",
+        "Visitor Parking"
+      ],
+      "ownerId": "own-11",
+      "agentId": "agt-01",
+      "approval": "approved",
+      "description": "Electronic City Office Floor in Electronic City, Bengaluru - resale.",
+      "id": "prp-044",
+      "code": "SRP-0044",
+      "createdAt": "2026-01-29T16:10:00.000Z"
+    }
+  ],
+  "leads": [
+    {
+      "id": "led-001",
+      "createdAt": "2026-07-27T19:41:00.000Z",
+      "name": "Anjali Nair",
+      "phone": "+91 87196 16593",
+      "source": "Referral",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 57000000,
+      "status": "Booked",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-08-05",
+      "propertyId": "prp-021",
+      "notes": "Comparing with Prestige and Sobha projects"
+    },
+    {
+      "id": "led-002",
+      "createdAt": "2026-07-28T17:09:00.000Z",
+      "name": "Ananya Menon",
+      "phone": "+91 95699 96437",
+      "email": "ananya.menon@gmail.com",
+      "source": "Referral",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 51500000,
+      "status": "Lost",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-008",
+      "notes": "Home loan pre-approved with SBI"
+    },
+    {
+      "id": "led-003",
+      "createdAt": "2026-08-02T10:16:00.000Z",
+      "name": "Harish Naidu",
+      "phone": "+91 68162 11993",
+      "source": "99acres",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53500000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-11-24",
+      "notes": "Asked for payment plan and GST breakup"
+    },
+    {
+      "id": "led-004",
+      "createdAt": "2026-08-04T17:03:00.000Z",
+      "name": "Nandini Reddy",
+      "phone": "+91 69181 29814",
+      "source": "MagicBricks",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 49000000,
+      "status": "New",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-008",
+      "notes": "Will visit with family on weekend"
+    },
+    {
+      "id": "led-005",
+      "createdAt": "2026-08-08T20:13:00.000Z",
+      "name": "Nandini Menon",
+      "phone": "+91 80085 15847",
+      "email": "nandini.menon@outlook.com",
+      "source": "MagicBricks",
+      "interest": "Rental - 3BHK",
+      "status": "Site Visit Done",
+      "assignedTo": "usr-08",
+      "siteVisitDate": "2026-08-11",
+      "propertyId": "prp-038",
+      "notes": "Budget flexible for Elora configuration"
+    },
+    {
+      "id": "led-006",
+      "createdAt": "2026-08-09T11:01:00.000Z",
+      "name": "Ramesh Hegde",
+      "phone": "+91 96740 06216",
+      "email": "ramesh.hegde@example.com",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 50500000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-11-29",
+      "propertyId": "prp-008",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-007",
+      "createdAt": "2026-08-10T13:37:00.000Z",
+      "name": "Lakshmi Sharma",
+      "phone": "+91 97470 87745",
+      "email": "lakshmi.sharma@yahoo.in",
+      "source": "Google Ads",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 69000000,
+      "status": "Contacted",
+      "assignedTo": "usr-09",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-008",
+      "createdAt": "2026-08-10T15:45:00.000Z",
+      "name": "Rohan Banerjee",
+      "phone": "+91 81997 96557",
+      "source": "Housing.com",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 48500000,
+      "status": "Negotiation",
+      "assignedTo": "usr-04",
+      "siteVisitDate": "2026-08-15",
+      "notes": "Asked for payment plan and GST breakup"
+    },
+    {
+      "id": "led-009",
+      "createdAt": "2026-08-11T18:05:00.000Z",
+      "name": "Aishwarya Naidu",
+      "phone": "+91 74404 19942",
+      "email": "aishwarya.naidu@outlook.com",
+      "source": "Website",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 52000000,
+      "status": "New",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-015",
+      "notes": "Corporate lease - company will pay rent"
+    },
+    {
+      "id": "led-010",
+      "createdAt": "2026-08-12T19:36:00.000Z",
+      "name": "Kavitha Iyer",
+      "phone": "+91 85317 87312",
+      "email": "kavitha.iyer@yahoo.in",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 52000000,
+      "status": "Site Visit Done",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-08-22",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-011",
+      "createdAt": "2026-08-16T16:10:00.000Z",
+      "name": "Nandini Desai",
+      "phone": "+91 76503 50875",
+      "email": "nandini.desai@example.com",
+      "source": "Channel Partner",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 65500000,
+      "status": "Negotiation",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-08-19",
+      "propertyId": "prp-028",
+      "notes": "Asked for payment plan and GST breakup"
+    },
+    {
+      "id": "led-012",
+      "createdAt": "2026-08-17T14:38:00.000Z",
+      "name": "Karthik Raman",
+      "phone": "+91 93474 88980",
+      "source": "Walk-in",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53000000,
+      "status": "Negotiation",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-08-20"
+    },
+    {
+      "id": "led-013",
+      "createdAt": "2026-08-18T18:34:00.000Z",
+      "name": "Divya Singh",
+      "phone": "+91 64943 77887",
+      "email": "divya.singh@yahoo.in",
+      "source": "Google Ads",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 52500000,
+      "status": "New",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-011"
+    },
+    {
+      "id": "led-014",
+      "createdAt": "2026-08-18T17:28:00.000Z",
+      "name": "Girish Agarwal",
+      "phone": "+91 66210 56773",
+      "email": "girish.agarwal@yahoo.in",
+      "source": "99acres",
+      "interest": "Rental - 2BHK",
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-11-26"
+    },
+    {
+      "id": "led-015",
+      "createdAt": "2026-08-19T20:58:00.000Z",
+      "name": "Kavitha Kumar",
+      "phone": "+91 66285 36307",
+      "email": "kavitha.kumar@yahoo.in",
+      "source": "MagicBricks",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 53000000,
+      "status": "Negotiation",
+      "assignedTo": "usr-08",
+      "siteVisitDate": "2026-08-28",
+      "notes": "Home loan pre-approved with SBI"
+    },
+    {
+      "id": "led-016",
+      "createdAt": "2026-08-19T11:46:00.000Z",
+      "name": "Shruti Chandra",
+      "phone": "+91 69134 24044",
+      "email": "shruti.chandra@gmail.com",
+      "source": "Google Ads",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 51000000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-11-27",
+      "propertyId": "prp-012",
+      "notes": "Budget flexible for Elora configuration"
+    },
+    {
+      "id": "led-017",
+      "createdAt": "2026-08-20T14:28:00.000Z",
+      "name": "Harish Kapoor",
+      "phone": "+91 84468 76883",
+      "source": "Website",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 54500000,
+      "status": "Contacted",
+      "assignedTo": "usr-09",
+      "notes": "Callback after 6 PM only"
+    },
+    {
+      "id": "led-018",
+      "createdAt": "2026-08-22T14:04:00.000Z",
+      "name": "Suresh Menon",
+      "phone": "+91 83572 17444",
+      "source": "Google Ads",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 53000000,
+      "status": "New",
+      "assignedTo": "usr-04",
+      "notes": "Asked for payment plan and GST breakup"
+    },
+    {
+      "id": "led-019",
+      "createdAt": "2026-08-27T15:02:00.000Z",
+      "name": "Manoj Kapoor",
+      "phone": "+91 99875 82515",
+      "email": "manoj.kapoor@example.com",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 54500000,
+      "status": "New",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-020",
+      "notes": "NRI - needs video walkthrough"
+    },
+    {
+      "id": "led-020",
+      "createdAt": "2026-08-31T12:59:00.000Z",
+      "name": "Sowmya Bhat",
+      "phone": "+91 78006 51384",
+      "email": "sowmya.bhat@yahoo.in",
+      "source": "99acres",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 40000000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-11-26",
+      "notes": "Prefers possession before Dec 2028"
+    },
+    {
+      "id": "led-021",
+      "createdAt": "2026-08-31T09:54:00.000Z",
+      "name": "Revathi Hegde",
+      "phone": "+91 65059 71182",
+      "email": "revathi.hegde@yahoo.in",
+      "source": "Google Ads",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 49000000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-12-01",
+      "propertyId": "prp-014",
+      "notes": "Interested in clubhouse and sports amenities"
+    },
+    {
+      "id": "led-022",
+      "createdAt": "2026-09-01T09:27:00.000Z",
+      "name": "Karthik Patel",
+      "phone": "+91 80282 18807",
+      "source": "Google Ads",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 56500000,
+      "status": "Lost",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-019"
+    },
+    {
+      "id": "led-023",
+      "createdAt": "2026-09-02T09:07:00.000Z",
+      "name": "Vihaan Patel",
+      "phone": "+91 62796 90078",
+      "source": "Housing.com",
+      "interest": "Rental - 3BHK",
+      "status": "Negotiation",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-09-11",
+      "propertyId": "prp-038"
+    },
+    {
+      "id": "led-024",
+      "createdAt": "2026-09-03T20:32:00.000Z",
+      "name": "Rohan Mehta",
+      "phone": "+91 87882 43369",
+      "email": "rohan.mehta@example.com",
+      "source": "Housing.com",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 45000000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-11-25",
+      "propertyId": "prp-006",
+      "notes": "Investor - wants rental yield details"
+    },
+    {
+      "id": "led-025",
+      "createdAt": "2026-09-03T17:15:00.000Z",
+      "name": "Harish Gowda",
+      "phone": "+91 86979 66537",
+      "source": "Facebook Ads",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 58000000,
+      "status": "Site Visit Done",
+      "assignedTo": "usr-08",
+      "siteVisitDate": "2026-09-11",
+      "propertyId": "prp-020",
+      "notes": "Relocating from Hyderabad next quarter"
+    },
+    {
+      "id": "led-026",
+      "createdAt": "2026-09-04T13:47:00.000Z",
+      "name": "Pooja Rao",
+      "phone": "+91 77016 98506",
+      "source": "MagicBricks",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 51000000,
+      "status": "New",
+      "assignedTo": "usr-02",
+      "notes": "Prefers possession before Dec 2028"
+    },
+    {
+      "id": "led-027",
+      "createdAt": "2026-09-08T12:13:00.000Z",
+      "name": "Arjun Menon",
+      "phone": "+91 95170 37800",
+      "email": "arjun.menon@outlook.com",
+      "source": "Facebook Ads",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 47000000,
+      "status": "Contacted",
+      "assignedTo": "usr-09",
+      "notes": "Budget flexible for Elora configuration"
+    },
+    {
+      "id": "led-028",
+      "createdAt": "2026-09-11T15:55:00.000Z",
+      "name": "Manoj Menon",
+      "phone": "+91 96841 50215",
+      "email": "manoj.menon@yahoo.in",
+      "source": "Facebook Ads",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 56500000,
+      "status": "Contacted",
+      "assignedTo": "usr-04",
+      "propertyId": "prp-019",
+      "notes": "Home loan pre-approved with SBI"
+    },
+    {
+      "id": "led-029",
+      "createdAt": "2026-09-13T10:41:00.000Z",
+      "name": "Prakash Rao",
+      "phone": "+91 87141 22301",
+      "email": "prakash.rao@gmail.com",
+      "source": "Google Ads",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 45000000,
+      "status": "New",
+      "assignedTo": "usr-03"
+    },
+    {
+      "id": "led-030",
+      "createdAt": "2026-09-13T10:59:00.000Z",
+      "name": "Sandeep Mehta",
+      "phone": "+91 85469 93130",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 58500000,
+      "status": "New",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-015",
+      "notes": "Comparing with Prestige and Sobha projects"
+    },
+    {
+      "id": "led-031",
+      "createdAt": "2026-09-14T18:29:00.000Z",
+      "name": "Radhika Bhat",
+      "phone": "+91 71266 14791",
+      "email": "radhika.bhat@gmail.com",
+      "source": "MagicBricks",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 56000000,
+      "status": "Lost",
+      "assignedTo": "usr-02",
+      "propertyId": "prp-016",
+      "notes": "Needs vastu-compliant entrance"
+    },
+    {
+      "id": "led-032",
+      "createdAt": "2026-09-15T18:43:00.000Z",
+      "name": "Prakash Naidu",
+      "phone": "+91 95091 71326",
+      "email": "prakash.naidu@outlook.com",
+      "source": "Google Ads",
+      "interest": "Rental - 2BHK",
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-11-26",
+      "notes": "NRI - needs video walkthrough"
+    },
+    {
+      "id": "led-033",
+      "createdAt": "2026-09-15T16:25:00.000Z",
+      "name": "Ramesh Krishnan",
+      "phone": "+91 60970 63602",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 58500000,
+      "status": "Site Visit Done",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-09-27",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-034",
+      "createdAt": "2026-09-17T15:51:00.000Z",
+      "name": "Suresh Agarwal",
+      "phone": "+91 62344 69558",
+      "email": "suresh.agarwal@outlook.com",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 54500000,
+      "status": "Negotiation",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-09-23",
+      "propertyId": "prp-016",
+      "notes": "Prefers possession before Dec 2028"
+    },
+    {
+      "id": "led-035",
+      "createdAt": "2026-09-17T10:44:00.000Z",
+      "name": "Shruti Patel",
+      "phone": "+91 89967 27128",
+      "email": "shruti.patel@example.com",
+      "source": "99acres",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 59500000,
+      "status": "Lost",
+      "assignedTo": "usr-08"
+    },
+    {
+      "id": "led-036",
+      "createdAt": "2026-09-21T13:43:00.000Z",
+      "name": "Deepa Agarwal",
+      "phone": "+91 92532 52115",
+      "source": "Channel Partner",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53000000,
+      "status": "Lost",
+      "assignedTo": "usr-02",
+      "propertyId": "prp-012",
+      "notes": "Relocating from Hyderabad next quarter"
+    },
+    {
+      "id": "led-037",
+      "createdAt": "2026-09-21T16:42:00.000Z",
+      "name": "Venkat Rao",
+      "phone": "+91 86254 30501",
+      "email": "venkat.rao@example.com",
+      "source": "Facebook Ads",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 52000000,
+      "status": "Lost",
+      "assignedTo": "usr-09",
+      "notes": "Looking for 4BHK close to Infosys campus"
+    },
+    {
+      "id": "led-038",
+      "createdAt": "2026-09-23T18:32:00.000Z",
+      "name": "Priya Gupta",
+      "phone": "+91 96610 92666",
+      "email": "priya.gupta@gmail.com",
+      "source": "Website",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 67000000,
+      "status": "Lost",
+      "assignedTo": "usr-04",
+      "propertyId": "prp-026",
+      "notes": "Will visit with family on weekend"
+    },
+    {
+      "id": "led-039",
+      "createdAt": "2026-09-24T17:11:00.000Z",
+      "name": "Meera Nair",
+      "phone": "+91 98176 08914",
+      "email": "meera.nair@example.com",
+      "source": "99acres",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 64500000,
+      "status": "Contacted",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-022",
+      "notes": "Interested in clubhouse and sports amenities"
+    },
+    {
+      "id": "led-040",
+      "createdAt": "2026-09-25T13:25:00.000Z",
+      "name": "Revathi Shetty",
+      "phone": "+91 98659 95593",
+      "email": "revathi.shetty@outlook.com",
+      "source": "99acres",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 41500000,
+      "status": "Site Visit Done",
+      "assignedTo": "usr-07",
+      "siteVisitDate": "2026-10-01",
+      "propertyId": "prp-004",
+      "notes": "NRI - needs video walkthrough"
+    },
+    {
+      "id": "led-041",
+      "createdAt": "2026-09-25T11:43:00.000Z",
+      "name": "Pooja Gowda",
+      "phone": "+91 96431 43273",
+      "email": "pooja.gowda@outlook.com",
+      "source": "Facebook Ads",
+      "interest": "Rental - 3BHK",
+      "status": "Negotiation",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-10-05",
+      "propertyId": "prp-038",
+      "notes": "Investor - wants rental yield details"
+    },
+    {
+      "id": "led-042",
+      "createdAt": "2026-09-27T10:59:00.000Z",
+      "name": "Sandeep Menon",
+      "phone": "+91 61218 56236",
+      "email": "sandeep.menon@example.com",
+      "source": "Website",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 47000000,
+      "status": "Contacted",
+      "assignedTo": "usr-03"
+    },
+    {
+      "id": "led-043",
+      "createdAt": "2026-09-28T16:04:00.000Z",
+      "name": "Lakshmi Iyer",
+      "phone": "+91 81612 36243",
+      "source": "99acres",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 51500000,
+      "status": "New",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-010",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-044",
+      "createdAt": "2026-10-01T14:53:00.000Z",
+      "name": "Nandini Joshi",
+      "phone": "+91 64808 34745",
+      "email": "nandini.joshi@outlook.com",
+      "source": "MagicBricks",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 69500000,
+      "status": "Booked",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-10-05",
+      "propertyId": "prp-022"
+    },
+    {
+      "id": "led-045",
+      "createdAt": "2026-10-01T09:06:00.000Z",
+      "name": "Aishwarya Varma",
+      "phone": "+91 92306 21013",
+      "email": "aishwarya.varma@gmail.com",
+      "source": "99acres",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 46500000,
+      "status": "New",
+      "assignedTo": "usr-08",
+      "propertyId": "prp-004",
+      "notes": "Home loan pre-approved with SBI"
+    },
+    {
+      "id": "led-046",
+      "createdAt": "2026-10-02T19:18:00.000Z",
+      "name": "Swathi Raman",
+      "phone": "+91 70588 58896",
+      "source": "Referral",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 67000000,
+      "status": "Contacted",
+      "assignedTo": "usr-02",
+      "notes": "Budget flexible for Elora configuration"
+    },
+    {
+      "id": "led-047",
+      "createdAt": "2026-10-04T09:45:00.000Z",
+      "name": "Girish Krishnan",
+      "phone": "+91 63740 41042",
+      "email": "girish.krishnan@gmail.com",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 52500000,
+      "status": "Contacted",
+      "assignedTo": "usr-09",
+      "propertyId": "prp-012"
+    },
+    {
+      "id": "led-048",
+      "createdAt": "2026-10-04T15:40:00.000Z",
+      "name": "Meera Gowda",
+      "phone": "+91 71790 70545",
+      "email": "meera.gowda@example.com",
+      "source": "Google Ads",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53500000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-04",
+      "siteVisitDate": "2026-11-30",
+      "propertyId": "prp-011"
+    },
+    {
+      "id": "led-049",
+      "createdAt": "2026-10-06T15:23:00.000Z",
+      "name": "Radhika Shetty",
+      "phone": "+91 71127 96080",
+      "email": "radhika.shetty@yahoo.in",
+      "source": "Channel Partner",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 46000000,
+      "status": "Contacted",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-005",
+      "notes": "Investor - wants rental yield details"
+    },
+    {
+      "id": "led-050",
+      "createdAt": "2026-10-16T18:38:00.000Z",
+      "name": "Vikram Subramanian",
+      "phone": "+91 80354 04458",
+      "email": "vikram.subramanian@yahoo.in",
+      "source": "MagicBricks",
+      "interest": "Rental - 2BHK",
+      "status": "New",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-038",
+      "notes": "NRI - needs video walkthrough"
+    },
+    {
+      "id": "led-051",
+      "createdAt": "2026-10-16T18:23:00.000Z",
+      "name": "Aarav Rao",
+      "phone": "+91 84189 75920",
+      "email": "aarav.rao@example.com",
+      "source": "Channel Partner",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 62000000,
+      "status": "Lost",
+      "assignedTo": "usr-02",
+      "propertyId": "prp-028",
+      "notes": "Comparing with Prestige and Sobha projects"
+    },
+    {
+      "id": "led-052",
+      "createdAt": "2026-10-16T11:33:00.000Z",
+      "name": "Ramesh Iyer",
+      "phone": "+91 63858 23882",
+      "email": "ramesh.iyer@example.com",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 51500000,
+      "status": "Booked",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-10-18",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-053",
+      "createdAt": "2026-10-16T14:06:00.000Z",
+      "name": "Vihaan Agarwal",
+      "phone": "+91 83404 70434",
+      "email": "vihaan.agarwal@gmail.com",
+      "source": "Facebook Ads",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 61500000,
+      "status": "Lost",
+      "assignedTo": "usr-07",
+      "notes": "Looking for 4BHK close to Infosys campus"
+    },
+    {
+      "id": "led-054",
+      "createdAt": "2026-10-18T18:33:00.000Z",
+      "name": "Girish Kumar",
+      "phone": "+91 60640 26563",
+      "email": "girish.kumar@gmail.com",
+      "source": "Google Ads",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 67000000,
+      "status": "New",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-023",
+      "notes": "Home loan pre-approved with SBI"
+    },
+    {
+      "id": "led-055",
+      "createdAt": "2026-10-19T14:01:00.000Z",
+      "name": "Srinivas Rao",
+      "phone": "+91 61123 14061",
+      "email": "srinivas.rao@gmail.com",
+      "source": "Referral",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 50500000,
+      "status": "Lost",
+      "assignedTo": "usr-08",
+      "notes": "Interested in clubhouse and sports amenities"
+    },
+    {
+      "id": "led-056",
+      "createdAt": "2026-10-19T15:05:00.000Z",
+      "name": "Karthik Gowda",
+      "phone": "+91 67180 09087",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 56000000,
+      "status": "Lost",
+      "assignedTo": "usr-02",
+      "notes": "Callback after 6 PM only"
+    },
+    {
+      "id": "led-057",
+      "createdAt": "2026-10-21T17:53:00.000Z",
+      "name": "Mahesh Gowda",
+      "phone": "+91 65014 65347",
+      "source": "Channel Partner",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 61500000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-09",
+      "siteVisitDate": "2026-11-29"
+    },
+    {
+      "id": "led-058",
+      "createdAt": "2026-10-21T09:34:00.000Z",
+      "name": "Srinivas Bhat",
+      "phone": "+91 66101 80927",
+      "source": "Walk-in",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 65500000,
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-04",
+      "siteVisitDate": "2026-12-06",
+      "notes": "Will visit with family on weekend"
+    },
+    {
+      "id": "led-059",
+      "createdAt": "2026-10-23T16:20:00.000Z",
+      "name": "Girish Murthy",
+      "phone": "+91 97793 45136",
+      "source": "Facebook Ads",
+      "interest": "Rental - 3BHK",
+      "status": "Site Visit Scheduled",
+      "assignedTo": "usr-03",
+      "siteVisitDate": "2026-11-29",
+      "propertyId": "prp-038",
+      "notes": "Prefers possession before Dec 2028"
+    },
+    {
+      "id": "led-060",
+      "createdAt": "2026-10-24T17:00:00.000Z",
+      "name": "Ramesh Menon",
+      "phone": "+91 98356 33420",
+      "email": "ramesh.menon@gmail.com",
+      "source": "Website",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 42000000,
+      "status": "New",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-006",
+      "notes": "Callback after 6 PM only"
+    },
+    {
+      "id": "led-061",
+      "createdAt": "2026-11-08T10:38:00.000Z",
+      "name": "Anil Chandra",
+      "phone": "+91 74687 42801",
+      "email": "anil.chandra@gmail.com",
+      "source": "Channel Partner",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 66500000,
+      "status": "Negotiation",
+      "assignedTo": "usr-02",
+      "siteVisitDate": "2026-11-13",
+      "notes": "Prefers possession before Dec 2028"
+    },
+    {
+      "id": "led-062",
+      "createdAt": "2026-11-09T11:59:00.000Z",
+      "name": "Revathi Iyer",
+      "phone": "+91 75157 78265",
+      "source": "Housing.com",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 69000000,
+      "status": "Lost",
+      "assignedTo": "usr-03",
+      "notes": "NRI - needs video walkthrough"
+    },
+    {
+      "id": "led-063",
+      "createdAt": "2026-11-09T11:40:00.000Z",
+      "name": "Vihaan Banerjee",
+      "phone": "+91 70547 82883",
+      "email": "vihaan.banerjee@gmail.com",
+      "source": "Website",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 65500000,
+      "status": "Contacted",
+      "assignedTo": "usr-07",
+      "propertyId": "prp-024",
+      "notes": "Investor - wants rental yield details"
+    },
+    {
+      "id": "led-064",
+      "createdAt": "2026-11-09T16:50:00.000Z",
+      "name": "Sowmya Pillai",
+      "phone": "+91 99307 06637",
+      "source": "Housing.com",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 43500000,
+      "status": "Contacted",
+      "assignedTo": "usr-03",
+      "notes": "Wants east-facing corner villa"
+    },
+    {
+      "id": "led-065",
+      "createdAt": "2026-11-11T11:12:00.000Z",
+      "name": "Swathi Joshi",
+      "phone": "+91 73690 78407",
+      "email": "swathi.joshi@example.com",
+      "source": "MagicBricks",
+      "interest": "Riora 4BHK (30x50)",
+      "budget": 43000000,
+      "status": "Lost",
+      "assignedTo": "usr-08"
+    },
+    {
+      "id": "led-066",
+      "createdAt": "2026-11-14T16:11:00.000Z",
+      "name": "Divya Prasad",
+      "phone": "+91 83202 51473",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53500000,
+      "status": "New",
+      "assignedTo": "usr-02",
+      "notes": "Investor - wants rental yield details"
+    },
+    {
+      "id": "led-067",
+      "createdAt": "2026-11-14T20:45:00.000Z",
+      "name": "Kavitha Pillai",
+      "phone": "+91 82821 95208",
+      "source": "Website",
+      "interest": "Avira 4BHK (35x50)",
+      "budget": 53000000,
+      "status": "Contacted",
+      "assignedTo": "usr-09",
+      "notes": "Comparing with Prestige and Sobha projects"
+    },
+    {
+      "id": "led-068",
+      "createdAt": "2026-11-15T13:07:00.000Z",
+      "name": "Priya Desai",
+      "phone": "+91 69940 53350",
+      "email": "priya.desai@example.com",
+      "source": "Facebook Ads",
+      "interest": "Rental - 2BHK",
+      "status": "Negotiation",
+      "assignedTo": "usr-04",
+      "siteVisitDate": "2026-11-18",
+      "notes": "Callback after 6 PM only"
+    },
+    {
+      "id": "led-069",
+      "createdAt": "2026-11-18T18:56:00.000Z",
+      "name": "Divya Desai",
+      "phone": "+91 70301 50158",
+      "source": "Channel Partner",
+      "interest": "Selora 4BHK (35x55)",
+      "budget": 55000000,
+      "status": "Contacted",
+      "assignedTo": "usr-03",
+      "propertyId": "prp-019",
+      "notes": "Relocating from Hyderabad next quarter"
+    },
+    {
+      "id": "led-070",
+      "createdAt": "2026-11-21T12:16:00.000Z",
+      "name": "Priya Menon",
+      "phone": "+91 63307 00775",
+      "email": "priya.menon@example.com",
+      "source": "Channel Partner",
+      "interest": "Elora 5BHK (40x50)",
+      "budget": 68500000,
+      "status": "New",
+      "assignedTo": "usr-07",
+      "notes": "Interested in clubhouse and sports amenities"
+    }
+  ],
+  "requests": [
+    {
+      "id": "req-b01",
+      "createdAt": "2026-08-10T10:30:00.000Z",
+      "number": "BR-0001",
+      "kind": "buy",
+      "propertyId": "prp-001",
+      "clientId": "cli-10",
+      "propertyPrice": 45400000,
+      "contractAmount": 45300000,
+      "termMonths": 0,
+      "startDate": "2026-09-17",
+      "status": "Complete",
+      "inspect": false,
+      "clientNote": "Would like a site inspection first.",
+      "contractId": "con-001",
+      "invoiceId": "inv-001"
+    },
+    {
+      "id": "req-b02",
+      "createdAt": "2026-08-02T10:30:00.000Z",
+      "number": "BR-0002",
+      "kind": "buy",
+      "propertyId": "prp-009",
+      "clientId": "cli-11",
+      "propertyPrice": 51700000,
+      "contractAmount": 50600000,
+      "termMonths": 0,
+      "startDate": "2026-10-18",
+      "status": "Complete",
+      "inspect": false,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "contractId": "con-002",
+      "invoiceId": "inv-002"
+    },
+    {
+      "id": "req-b03",
+      "createdAt": "2026-08-06T10:30:00.000Z",
+      "number": "BR-0003",
+      "kind": "buy",
+      "propertyId": "prp-016",
+      "clientId": "cli-12",
+      "propertyPrice": 54700000,
+      "contractAmount": 54600000,
+      "termMonths": 0,
+      "startDate": "2026-09-21",
+      "status": "Complete",
+      "inspect": true,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "inspectionDate": "2026-08-14",
+      "contractId": "con-003",
+      "invoiceId": "inv-003"
+    },
+    {
+      "id": "req-b04",
+      "createdAt": "2026-09-04T10:30:00.000Z",
+      "number": "BR-0004",
+      "kind": "buy",
+      "propertyId": "prp-004",
+      "clientId": "cli-13",
+      "propertyPrice": 44900000,
+      "contractAmount": 44300000,
+      "termMonths": 0,
+      "startDate": "2026-10-09",
+      "status": "Approved",
+      "inspect": true,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "inspectionDate": "2026-09-09",
+      "contractId": "con-004",
+      "invoiceId": "inv-004"
+    },
+    {
+      "id": "req-b05",
+      "createdAt": "2026-09-28T10:30:00.000Z",
+      "number": "BR-0005",
+      "kind": "buy",
+      "propertyId": "prp-018",
+      "clientId": "cli-14",
+      "propertyPrice": 57300000,
+      "contractAmount": 57200000,
+      "termMonths": 0,
+      "startDate": "2026-12-12",
+      "status": "Approved",
+      "inspect": true,
+      "clientNote": "Would like a site inspection first.",
+      "inspectionDate": "2026-10-03",
+      "contractId": "con-005",
+      "invoiceId": "inv-005"
+    },
+    {
+      "id": "req-b06",
+      "createdAt": "2026-10-02T10:30:00.000Z",
+      "number": "BR-0006",
+      "kind": "buy",
+      "propertyId": "prp-002",
+      "clientId": "cli-01",
+      "propertyPrice": 44600000,
+      "contractAmount": 43700000,
+      "termMonths": 0,
+      "startDate": "2026-11-20",
+      "status": "Approved",
+      "inspect": true,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "inspectionDate": "2026-10-06",
+      "contractId": "con-006",
+      "invoiceId": "inv-006"
+    },
+    {
+      "id": "req-b07",
+      "createdAt": "2026-09-22T10:30:00.000Z",
+      "number": "BR-0007",
+      "kind": "buy",
+      "propertyId": "prp-010",
+      "clientId": "cli-15",
+      "propertyPrice": 49800000,
+      "contractAmount": 49200000,
+      "termMonths": 0,
+      "startDate": "2026-12-01",
+      "status": "Approved",
+      "inspect": true,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "inspectionDate": "2026-09-25",
+      "contractId": "con-007",
+      "invoiceId": "inv-007"
+    },
+    {
+      "id": "req-b08",
+      "createdAt": "2026-09-26T10:30:00.000Z",
+      "number": "BR-0008",
+      "kind": "buy",
+      "propertyId": "prp-017",
+      "clientId": "cli-16",
+      "propertyPrice": 55400000,
+      "contractAmount": 54800000,
+      "termMonths": 0,
+      "startDate": "2026-11-18",
+      "status": "Waiting for approval",
+      "inspect": true,
+      "clientNote": "Please share the payment schedule.",
+      "inspectionDate": "2026-10-05"
+    },
+    {
+      "id": "req-b09",
+      "createdAt": "2026-09-27T10:30:00.000Z",
+      "number": "BR-0009",
+      "kind": "buy",
+      "propertyId": "prp-023",
+      "clientId": "cli-17",
+      "propertyPrice": 65900000,
+      "contractAmount": 65100000,
+      "termMonths": 0,
+      "startDate": "2026-12-12",
+      "status": "Waiting for approval",
+      "inspect": false,
+      "clientNote": "Would like a site inspection first."
+    },
+    {
+      "id": "req-b10",
+      "createdAt": "2026-10-19T10:30:00.000Z",
+      "number": "BR-0010",
+      "kind": "buy",
+      "propertyId": "prp-026",
+      "clientId": "cli-18",
+      "propertyPrice": 62900000,
+      "contractAmount": 61200000,
+      "termMonths": 0,
+      "startDate": "2026-12-22",
+      "status": "Sent",
+      "inspect": true,
+      "clientNote": "Interested in corner plot if available.",
+      "inspectionDate": "2026-10-29"
+    },
+    {
+      "id": "req-b11",
+      "createdAt": "2026-10-02T10:30:00.000Z",
+      "number": "BR-0011",
+      "kind": "buy",
+      "propertyId": "prp-005",
+      "clientId": "cli-19",
+      "propertyPrice": 44500000,
+      "contractAmount": 43500000,
+      "termMonths": 0,
+      "startDate": "2026-12-02",
+      "status": "Submitted",
+      "inspect": true,
+      "clientNote": "Please share the payment schedule.",
+      "inspectionDate": "2026-10-05"
+    },
+    {
+      "id": "req-b12",
+      "createdAt": "2026-11-12T10:30:00.000Z",
+      "number": "BR-0012",
+      "kind": "buy",
+      "propertyId": "prp-011",
+      "clientId": "cli-20",
+      "propertyPrice": 50900000,
+      "contractAmount": 50200000,
+      "termMonths": 0,
+      "startDate": "2026-12-24",
+      "status": "Submitted",
+      "inspect": true,
+      "clientNote": "Please share the payment schedule.",
+      "inspectionDate": "2026-11-22"
+    },
+    {
+      "id": "req-b13",
+      "createdAt": "2026-10-05T10:30:00.000Z",
+      "number": "BR-0013",
+      "kind": "buy",
+      "propertyId": "prp-007",
+      "clientId": "cli-21",
+      "propertyPrice": 44900000,
+      "contractAmount": 43900000,
+      "termMonths": 0,
+      "startDate": "2026-11-25",
+      "status": "Draft",
+      "inspect": true,
+      "clientNote": "Interested in corner plot if available.",
+      "inspectionDate": "2026-10-12"
+    },
+    {
+      "id": "req-b14",
+      "createdAt": "2026-11-09T10:30:00.000Z",
+      "number": "BR-0014",
+      "kind": "buy",
+      "propertyId": "prp-012",
+      "clientId": "cli-22",
+      "propertyPrice": 51200000,
+      "contractAmount": 50800000,
+      "termMonths": 0,
+      "startDate": "2026-12-14",
+      "status": "Cancelled",
+      "inspect": false,
+      "clientNote": "Please share the payment schedule.",
+      "adminNote": "Client withdrew - budget revised."
+    },
+    {
+      "id": "req-b15",
+      "createdAt": "2026-11-19T10:30:00.000Z",
+      "number": "BR-0015",
+      "kind": "buy",
+      "propertyId": "prp-019",
+      "clientId": "cli-23",
+      "propertyPrice": 57500000,
+      "contractAmount": 56800000,
+      "termMonths": 0,
+      "startDate": "2027-02-09",
+      "status": "Cancelled",
+      "inspect": false,
+      "clientNote": "Interested in corner plot if available.",
+      "adminNote": "Client withdrew - budget revised."
+    },
+    {
+      "id": "req-b16",
+      "createdAt": "2026-10-13T10:30:00.000Z",
+      "number": "BR-0016",
+      "kind": "buy",
+      "propertyId": "prp-021",
+      "clientId": "cli-24",
+      "propertyPrice": 54900000,
+      "contractAmount": 54600000,
+      "termMonths": 0,
+      "startDate": "2026-11-12",
+      "status": "Expired",
+      "inspect": true,
+      "clientNote": "Home loan sanctioned, ready to proceed.",
+      "adminNote": "No response from client within validity.",
+      "inspectionDate": "2026-10-19"
+    },
+    {
+      "id": "req-r01",
+      "createdAt": "2026-02-06T10:15:00.000Z",
+      "number": "RR-0001",
+      "kind": "rent",
+      "propertyId": "prp-029",
+      "clientId": "cli-01",
+      "propertyPrice": 95000,
+      "contractAmount": 1140000,
+      "termMonths": 12,
+      "startDate": "2026-03-01",
+      "endDate": "2027-02-28",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-02-09",
+      "clientNote": "Company lease, GST invoice required.",
+      "contractId": "con-008",
+      "invoiceId": "inv-008"
+    },
+    {
+      "id": "req-r02",
+      "createdAt": "2025-12-29T10:15:00.000Z",
+      "number": "RR-0002",
+      "kind": "rent",
+      "propertyId": "prp-030",
+      "clientId": "cli-02",
+      "propertyPrice": 48000,
+      "contractAmount": 528000,
+      "termMonths": 11,
+      "startDate": "2026-01-16",
+      "endDate": "2026-12-15",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-01-01",
+      "clientNote": "Company lease, GST invoice required.",
+      "contractId": "con-009",
+      "invoiceId": "inv-009"
+    },
+    {
+      "id": "req-r03",
+      "createdAt": "2026-01-31T10:15:00.000Z",
+      "number": "RR-0003",
+      "kind": "rent",
+      "propertyId": "prp-031",
+      "clientId": "cli-03",
+      "propertyPrice": 62000,
+      "contractAmount": 682000,
+      "termMonths": 11,
+      "startDate": "2026-02-21",
+      "endDate": "2027-01-20",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-02-03",
+      "clientNote": "Need parking for two cars.",
+      "contractId": "con-010",
+      "invoiceId": "inv-010"
+    },
+    {
+      "id": "req-r04",
+      "createdAt": "2026-05-10T10:15:00.000Z",
+      "number": "RR-0004",
+      "kind": "rent",
+      "propertyId": "prp-032",
+      "clientId": "cli-04",
+      "propertyPrice": 28000,
+      "contractAmount": 336000,
+      "termMonths": 12,
+      "startDate": "2026-06-01",
+      "endDate": "2027-05-31",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-05-13",
+      "clientNote": "Company lease, GST invoice required.",
+      "contractId": "con-011",
+      "invoiceId": "inv-011"
+    },
+    {
+      "id": "req-r05",
+      "createdAt": "2026-07-15T10:15:00.000Z",
+      "number": "RR-0005",
+      "kind": "rent",
+      "propertyId": "prp-033",
+      "clientId": "cli-05",
+      "propertyPrice": 78000,
+      "contractAmount": 858000,
+      "termMonths": 11,
+      "startDate": "2026-08-01",
+      "endDate": "2027-06-30",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-07-18",
+      "clientNote": "Family of four, 11-month agreement preferred.",
+      "contractId": "con-012",
+      "invoiceId": "inv-012"
+    },
+    {
+      "id": "req-r06",
+      "createdAt": "2026-08-26T10:15:00.000Z",
+      "number": "RR-0006",
+      "kind": "rent",
+      "propertyId": "prp-034",
+      "clientId": "cli-06",
+      "propertyPrice": 250000,
+      "contractAmount": 3000000,
+      "termMonths": 12,
+      "startDate": "2026-09-15",
+      "endDate": "2027-09-14",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-08-29",
+      "clientNote": "Need parking for two cars.",
+      "contractId": "con-013",
+      "invoiceId": "inv-013"
+    },
+    {
+      "id": "req-r07",
+      "createdAt": "2026-04-24T10:15:00.000Z",
+      "number": "RR-0007",
+      "kind": "rent",
+      "propertyId": "prp-035",
+      "clientId": "cli-07",
+      "propertyPrice": 32000,
+      "contractAmount": 384000,
+      "termMonths": 12,
+      "startDate": "2026-05-10",
+      "endDate": "2027-05-09",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-04-27",
+      "clientNote": "Company lease, GST invoice required.",
+      "contractId": "con-014",
+      "invoiceId": "inv-014"
+    },
+    {
+      "id": "req-r08",
+      "createdAt": "2026-03-17T10:15:00.000Z",
+      "number": "RR-0008",
+      "kind": "rent",
+      "propertyId": "prp-036",
+      "clientId": "cli-08",
+      "propertyPrice": 120000,
+      "contractAmount": 1440000,
+      "termMonths": 12,
+      "startDate": "2026-04-01",
+      "endDate": "2027-03-31",
+      "status": "Approved",
+      "inspect": true,
+      "inspectionDate": "2026-03-20",
+      "clientNote": "Family of four, 11-month agreement preferred.",
+      "contractId": "con-015",
+      "invoiceId": "inv-015"
+    },
+    {
+      "id": "req-r09",
+      "createdAt": "2025-09-07T10:15:00.000Z",
+      "number": "RR-0009",
+      "kind": "rent",
+      "propertyId": "prp-037",
+      "clientId": "cli-09",
+      "propertyPrice": 85000,
+      "contractAmount": 1020000,
+      "termMonths": 12,
+      "startDate": "2025-10-01",
+      "endDate": "2026-09-30",
+      "status": "Complete",
+      "inspect": true,
+      "inspectionDate": "2025-09-10",
+      "clientNote": "Company lease, GST invoice required.",
+      "contractId": "con-016",
+      "invoiceId": "inv-016"
+    },
+    {
+      "id": "req-r10",
+      "createdAt": "2026-11-04T14:00:00.000Z",
+      "number": "RR-0010",
+      "kind": "rent",
+      "propertyId": "prp-038",
+      "clientId": "cli-13",
+      "propertyPrice": 110000,
+      "contractAmount": 1210000,
+      "termMonths": 11,
+      "startDate": "2026-12-23",
+      "status": "Submitted",
+      "inspect": false,
+      "clientNote": "Looking to move in next month."
+    },
+    {
+      "id": "req-r11",
+      "createdAt": "2026-11-19T14:00:00.000Z",
+      "number": "RR-0011",
+      "kind": "rent",
+      "propertyId": "prp-037",
+      "clientId": "cli-14",
+      "propertyPrice": 85000,
+      "contractAmount": 935000,
+      "termMonths": 11,
+      "startDate": "2026-12-21",
+      "status": "Waiting for approval",
+      "inspect": false,
+      "clientNote": "Looking to move in next month."
+    },
+    {
+      "id": "req-r12",
+      "createdAt": "2026-11-03T14:00:00.000Z",
+      "number": "RR-0012",
+      "kind": "rent",
+      "propertyId": "prp-038",
+      "clientId": "cli-15",
+      "propertyPrice": 110000,
+      "contractAmount": 1210000,
+      "termMonths": 11,
+      "startDate": "2026-12-18",
+      "status": "Cancelled",
+      "inspect": false,
+      "clientNote": "Looking to move in next month.",
+      "adminNote": "Client found another unit."
+    }
+  ],
+  "tenants": [
+    {
+      "id": "ten-01",
+      "createdAt": "2026-02-27T09:00:00.000Z",
+      "referenceNo": "TN-0001",
+      "clientId": "cli-01",
+      "propertyId": "prp-029",
+      "requestId": "req-r01",
+      "leaseStart": "2026-03-01",
+      "leaseEnd": "2027-02-28",
+      "monthlyRent": 95000,
+      "deposit": 285000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-02",
+      "createdAt": "2026-01-14T09:00:00.000Z",
+      "referenceNo": "TN-0002",
+      "clientId": "cli-02",
+      "propertyId": "prp-030",
+      "requestId": "req-r02",
+      "leaseStart": "2026-01-16",
+      "leaseEnd": "2026-12-15",
+      "monthlyRent": 48000,
+      "deposit": 144000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-03",
+      "createdAt": "2026-02-19T09:00:00.000Z",
+      "referenceNo": "TN-0003",
+      "clientId": "cli-03",
+      "propertyId": "prp-031",
+      "requestId": "req-r03",
+      "leaseStart": "2026-02-21",
+      "leaseEnd": "2027-01-20",
+      "monthlyRent": 62000,
+      "deposit": 186000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-04",
+      "createdAt": "2026-05-30T09:00:00.000Z",
+      "referenceNo": "TN-0004",
+      "clientId": "cli-04",
+      "propertyId": "prp-032",
+      "requestId": "req-r04",
+      "leaseStart": "2026-06-01",
+      "leaseEnd": "2027-05-31",
+      "monthlyRent": 28000,
+      "deposit": 84000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-05",
+      "createdAt": "2026-07-30T09:00:00.000Z",
+      "referenceNo": "TN-0005",
+      "clientId": "cli-05",
+      "propertyId": "prp-033",
+      "requestId": "req-r05",
+      "leaseStart": "2026-08-01",
+      "leaseEnd": "2027-06-30",
+      "monthlyRent": 78000,
+      "deposit": 234000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-06",
+      "createdAt": "2026-09-13T09:00:00.000Z",
+      "referenceNo": "TN-0006",
+      "clientId": "cli-06",
+      "propertyId": "prp-034",
+      "requestId": "req-r06",
+      "leaseStart": "2026-09-15",
+      "leaseEnd": "2027-09-14",
+      "monthlyRent": 250000,
+      "deposit": 1500000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-07",
+      "createdAt": "2026-05-08T09:00:00.000Z",
+      "referenceNo": "TN-0007",
+      "clientId": "cli-07",
+      "propertyId": "prp-035",
+      "requestId": "req-r07",
+      "leaseStart": "2026-05-10",
+      "leaseEnd": "2027-05-09",
+      "monthlyRent": 32000,
+      "deposit": 96000,
+      "status": "Active"
+    },
+    {
+      "id": "ten-08",
+      "createdAt": "2026-03-30T09:00:00.000Z",
+      "referenceNo": "TN-0008",
+      "clientId": "cli-08",
+      "propertyId": "prp-036",
+      "requestId": "req-r08",
+      "leaseStart": "2026-04-01",
+      "leaseEnd": "2027-03-31",
+      "monthlyRent": 120000,
+      "deposit": 720000,
+      "status": "Notice Period"
+    },
+    {
+      "id": "ten-09",
+      "createdAt": "2025-09-29T09:00:00.000Z",
+      "referenceNo": "TN-0009",
+      "clientId": "cli-09",
+      "propertyId": "prp-037",
+      "requestId": "req-r09",
+      "leaseStart": "2025-10-01",
+      "leaseEnd": "2026-09-30",
+      "monthlyRent": 85000,
+      "deposit": 255000,
+      "status": "Ended"
+    }
+  ],
+  "contracts": [
+    {
+      "id": "con-001",
+      "createdAt": "2026-08-15T11:00:00.000Z",
+      "number": "CON-0001",
+      "requestId": "req-b01",
+      "kind": "buy",
+      "clientId": "cli-10",
+      "propertyId": "prp-001",
+      "amount": 45300000,
+      "signed": true,
+      "signedAt": "2026-08-17T15:00:00.000Z"
+    },
+    {
+      "id": "con-002",
+      "createdAt": "2026-08-07T11:00:00.000Z",
+      "number": "CON-0002",
+      "requestId": "req-b02",
+      "kind": "buy",
+      "clientId": "cli-11",
+      "propertyId": "prp-009",
+      "amount": 50600000,
+      "signed": true,
+      "signedAt": "2026-08-09T15:00:00.000Z"
+    },
+    {
+      "id": "con-003",
+      "createdAt": "2026-08-11T11:00:00.000Z",
+      "number": "CON-0003",
+      "requestId": "req-b03",
+      "kind": "buy",
+      "clientId": "cli-12",
+      "propertyId": "prp-016",
+      "amount": 54600000,
+      "signed": true,
+      "signedAt": "2026-08-13T15:00:00.000Z"
+    },
+    {
+      "id": "con-004",
+      "createdAt": "2026-09-09T11:00:00.000Z",
+      "number": "CON-0004",
+      "requestId": "req-b04",
+      "kind": "buy",
+      "clientId": "cli-13",
+      "propertyId": "prp-004",
+      "amount": 44300000,
+      "signed": true,
+      "signedAt": "2026-09-11T15:00:00.000Z"
+    },
+    {
+      "id": "con-005",
+      "createdAt": "2026-10-03T11:00:00.000Z",
+      "number": "CON-0005",
+      "requestId": "req-b05",
+      "kind": "buy",
+      "clientId": "cli-14",
+      "propertyId": "prp-018",
+      "amount": 57200000,
+      "signed": true,
+      "signedAt": "2026-10-05T15:00:00.000Z"
+    },
+    {
+      "id": "con-006",
+      "createdAt": "2026-10-07T11:00:00.000Z",
+      "number": "CON-0006",
+      "requestId": "req-b06",
+      "kind": "buy",
+      "clientId": "cli-01",
+      "propertyId": "prp-002",
+      "amount": 43700000,
+      "signed": true,
+      "signedAt": "2026-10-09T15:00:00.000Z"
+    },
+    {
+      "id": "con-007",
+      "createdAt": "2026-09-27T11:00:00.000Z",
+      "number": "CON-0007",
+      "requestId": "req-b07",
+      "kind": "buy",
+      "clientId": "cli-15",
+      "propertyId": "prp-010",
+      "amount": 49200000,
+      "signed": false
+    },
+    {
+      "id": "con-008",
+      "createdAt": "2026-02-12T11:00:00.000Z",
+      "number": "CON-0008",
+      "requestId": "req-r01",
+      "kind": "rent",
+      "clientId": "cli-01",
+      "propertyId": "prp-029",
+      "amount": 1140000,
+      "signed": true,
+      "signedAt": "2026-02-14T15:00:00.000Z"
+    },
+    {
+      "id": "con-009",
+      "createdAt": "2026-01-04T11:00:00.000Z",
+      "number": "CON-0009",
+      "requestId": "req-r02",
+      "kind": "rent",
+      "clientId": "cli-02",
+      "propertyId": "prp-030",
+      "amount": 528000,
+      "signed": true,
+      "signedAt": "2026-01-06T15:00:00.000Z"
+    },
+    {
+      "id": "con-010",
+      "createdAt": "2026-02-06T11:00:00.000Z",
+      "number": "CON-0010",
+      "requestId": "req-r03",
+      "kind": "rent",
+      "clientId": "cli-03",
+      "propertyId": "prp-031",
+      "amount": 682000,
+      "signed": true,
+      "signedAt": "2026-02-08T15:00:00.000Z"
+    },
+    {
+      "id": "con-011",
+      "createdAt": "2026-05-16T11:00:00.000Z",
+      "number": "CON-0011",
+      "requestId": "req-r04",
+      "kind": "rent",
+      "clientId": "cli-04",
+      "propertyId": "prp-032",
+      "amount": 336000,
+      "signed": true,
+      "signedAt": "2026-05-18T15:00:00.000Z"
+    },
+    {
+      "id": "con-012",
+      "createdAt": "2026-07-21T11:00:00.000Z",
+      "number": "CON-0012",
+      "requestId": "req-r05",
+      "kind": "rent",
+      "clientId": "cli-05",
+      "propertyId": "prp-033",
+      "amount": 858000,
+      "signed": true,
+      "signedAt": "2026-07-23T15:00:00.000Z"
+    },
+    {
+      "id": "con-013",
+      "createdAt": "2026-09-01T11:00:00.000Z",
+      "number": "CON-0013",
+      "requestId": "req-r06",
+      "kind": "rent",
+      "clientId": "cli-06",
+      "propertyId": "prp-034",
+      "amount": 3000000,
+      "signed": true,
+      "signedAt": "2026-09-03T15:00:00.000Z"
+    },
+    {
+      "id": "con-014",
+      "createdAt": "2026-04-30T11:00:00.000Z",
+      "number": "CON-0014",
+      "requestId": "req-r07",
+      "kind": "rent",
+      "clientId": "cli-07",
+      "propertyId": "prp-035",
+      "amount": 384000,
+      "signed": true,
+      "signedAt": "2026-05-02T15:00:00.000Z"
+    },
+    {
+      "id": "con-015",
+      "createdAt": "2026-03-23T11:00:00.000Z",
+      "number": "CON-0015",
+      "requestId": "req-r08",
+      "kind": "rent",
+      "clientId": "cli-08",
+      "propertyId": "prp-036",
+      "amount": 1440000,
+      "signed": true,
+      "signedAt": "2026-03-25T15:00:00.000Z"
+    },
+    {
+      "id": "con-016",
+      "createdAt": "2025-09-13T11:00:00.000Z",
+      "number": "CON-0016",
+      "requestId": "req-r09",
+      "kind": "rent",
+      "clientId": "cli-09",
+      "propertyId": "prp-037",
+      "amount": 1020000,
+      "signed": true,
+      "signedAt": "2025-09-15T15:00:00.000Z"
+    }
+  ],
+  "invoices": [
+    {
+      "id": "inv-001",
+      "createdAt": "2026-08-16T12:00:00.000Z",
+      "number": "INV-0001",
+      "requestId": "req-b01",
+      "kind": "buy",
+      "clientId": "cli-10",
+      "propertyId": "prp-001",
+      "amount": 500000,
+      "dueDate": "2026-08-22",
+      "payments": [
+        {
+          "date": "2026-08-18",
+          "amount": 500000,
+          "mode": "UPI",
+          "ref": "UPI27270531"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-002",
+      "createdAt": "2026-08-08T12:00:00.000Z",
+      "number": "INV-0002",
+      "requestId": "req-b02",
+      "kind": "buy",
+      "clientId": "cli-11",
+      "propertyId": "prp-009",
+      "amount": 500000,
+      "dueDate": "2026-08-14",
+      "payments": [
+        {
+          "date": "2026-08-10",
+          "amount": 500000,
+          "mode": "NEFT",
+          "ref": "NEFT79449172"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-003",
+      "createdAt": "2026-08-12T12:00:00.000Z",
+      "number": "INV-0003",
+      "requestId": "req-b03",
+      "kind": "buy",
+      "clientId": "cli-12",
+      "propertyId": "prp-016",
+      "amount": 500000,
+      "dueDate": "2026-08-18",
+      "payments": [
+        {
+          "date": "2026-08-14",
+          "amount": 500000,
+          "mode": "RTGS",
+          "ref": "RTGS82090217"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-004",
+      "createdAt": "2026-09-10T12:00:00.000Z",
+      "number": "INV-0004",
+      "requestId": "req-b04",
+      "kind": "buy",
+      "clientId": "cli-13",
+      "propertyId": "prp-004",
+      "amount": 500000,
+      "dueDate": "2026-09-16",
+      "payments": [
+        {
+          "date": "2026-09-16",
+          "amount": 500000,
+          "mode": "UPI",
+          "ref": "UPI44136389"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-005",
+      "createdAt": "2026-10-04T12:00:00.000Z",
+      "number": "INV-0005",
+      "requestId": "req-b05",
+      "kind": "buy",
+      "clientId": "cli-14",
+      "propertyId": "prp-018",
+      "amount": 500000,
+      "dueDate": "2026-10-10",
+      "payments": [
+        {
+          "date": "2026-10-08",
+          "amount": 500000,
+          "mode": "NEFT",
+          "ref": "NEFT78128227"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-006",
+      "createdAt": "2026-10-08T12:00:00.000Z",
+      "number": "INV-0006",
+      "requestId": "req-b06",
+      "kind": "buy",
+      "clientId": "cli-01",
+      "propertyId": "prp-002",
+      "amount": 500000,
+      "dueDate": "2026-10-14",
+      "payments": [
+        {
+          "date": "2026-10-12",
+          "amount": 250000,
+          "mode": "UPI",
+          "ref": "UPI30825264"
+        }
+      ],
+      "status": "Partially Paid"
+    },
+    {
+      "id": "inv-007",
+      "createdAt": "2026-09-28T12:00:00.000Z",
+      "number": "INV-0007",
+      "requestId": "req-b07",
+      "kind": "buy",
+      "clientId": "cli-15",
+      "propertyId": "prp-010",
+      "amount": 500000,
+      "dueDate": "2026-11-10",
+      "payments": [],
+      "status": "Overdue"
+    },
+    {
+      "id": "inv-008",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0008",
+      "requestId": "req-r01",
+      "kind": "rent",
+      "clientId": "cli-01",
+      "propertyId": "prp-029",
+      "amount": 95000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-02",
+          "amount": 95000,
+          "mode": "RTGS",
+          "ref": "RTGS15360250"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-009",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0009",
+      "requestId": "req-r02",
+      "kind": "rent",
+      "clientId": "cli-02",
+      "propertyId": "prp-030",
+      "amount": 48000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-05",
+          "amount": 48000,
+          "mode": "UPI",
+          "ref": "UPI15091933"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-010",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0010",
+      "requestId": "req-r03",
+      "kind": "rent",
+      "clientId": "cli-03",
+      "propertyId": "prp-031",
+      "amount": 62000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-03",
+          "amount": 31000,
+          "mode": "NEFT",
+          "ref": "NEFT86930792"
+        }
+      ],
+      "status": "Partially Paid"
+    },
+    {
+      "id": "inv-011",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0011",
+      "requestId": "req-r04",
+      "kind": "rent",
+      "clientId": "cli-04",
+      "propertyId": "prp-032",
+      "amount": 28000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-02",
+          "amount": 28000,
+          "mode": "UPI",
+          "ref": "UPI63371401"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-012",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0012",
+      "requestId": "req-r05",
+      "kind": "rent",
+      "clientId": "cli-05",
+      "propertyId": "prp-033",
+      "amount": 78000,
+      "dueDate": "2026-11-05",
+      "payments": [],
+      "status": "Overdue"
+    },
+    {
+      "id": "inv-013",
+      "createdAt": "2026-11-22T12:00:00.000Z",
+      "number": "INV-0013",
+      "requestId": "req-r06",
+      "kind": "rent",
+      "clientId": "cli-06",
+      "propertyId": "prp-034",
+      "amount": 250000,
+      "dueDate": "2026-12-01",
+      "payments": [],
+      "status": "Unpaid"
+    },
+    {
+      "id": "inv-014",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0014",
+      "requestId": "req-r07",
+      "kind": "rent",
+      "clientId": "cli-07",
+      "propertyId": "prp-035",
+      "amount": 32000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-03",
+          "amount": 16000,
+          "mode": "UPI",
+          "ref": "UPI10662875"
+        }
+      ],
+      "status": "Partially Paid"
+    },
+    {
+      "id": "inv-015",
+      "createdAt": "2026-10-27T12:00:00.000Z",
+      "number": "INV-0015",
+      "requestId": "req-r08",
+      "kind": "rent",
+      "clientId": "cli-08",
+      "propertyId": "prp-036",
+      "amount": 120000,
+      "dueDate": "2026-11-05",
+      "payments": [
+        {
+          "date": "2026-11-02",
+          "amount": 120000,
+          "mode": "NEFT",
+          "ref": "NEFT33424374"
+        }
+      ],
+      "status": "Paid"
+    },
+    {
+      "id": "inv-016",
+      "createdAt": "2026-08-27T12:00:00.000Z",
+      "number": "INV-0016",
+      "requestId": "req-r09",
+      "kind": "rent",
+      "clientId": "cli-09",
+      "propertyId": "prp-037",
+      "amount": 85000,
+      "dueDate": "2026-09-05",
+      "payments": [
+        {
+          "date": "2026-09-05",
+          "amount": 85000,
+          "mode": "UPI",
+          "ref": "UPI96812845"
+        }
+      ],
+      "status": "Paid"
+    }
+  ],
+  "plans": [
+    {
+      "id": "plan-1",
+      "createdAt": "2026-01-26T10:00:00.000Z",
+      "name": "Silver",
+      "monthlyListings": 10,
+      "rate": 4999,
+      "paymentType": "Monthly",
+      "description": "Up to 10 listings per month"
+    },
+    {
+      "id": "plan-2",
+      "createdAt": "2026-01-26T10:00:00.000Z",
+      "name": "Gold",
+      "monthlyListings": 30,
+      "rate": 11999,
+      "paymentType": "Monthly",
+      "description": "Up to 30 listings per month"
+    },
+    {
+      "id": "plan-3",
+      "createdAt": "2026-01-26T10:00:00.000Z",
+      "name": "Platinum",
+      "monthlyListings": 999,
+      "rate": 119999,
+      "paymentType": "Yearly",
+      "description": "Unlimited listings"
+    }
+  ],
+  "settings": {
+    "companyName": "Sterlitee Developers",
+    "productName": "Regal Park CRM",
+    "projectName": "Sterlitee Regal Park",
+    "tagline": "Your Private World, Nestled in Electronic City",
+    "rera": "PRM/KA/RERA/1251/308/PR/180925/008098",
+    "phone": "+91 90080 32626",
+    "email": "info@sterlitee.in",
+    "address": "Sterlitee Regal Park, Neotown, Electronic City Phase 1, Bengaluru, Karnataka 560100",
+    "currency": "INR",
+    "showBrokerPortal": true,
+    "requirePropertyApproval": true,
+    "prefixes": {
+      "property": "SRP-",
+      "owner": "PO-",
+      "agent": "AG-",
+      "broker": "BB-",
+      "staff": "ST-",
+      "client": "CL-",
+      "buy": "BR-",
+      "rent": "RR-",
+      "invoice": "INV-",
+      "contract": "CON-",
+      "tenant": "TN-"
+    },
+    "nextNumbers": {
+      "property": 45,
+      "owner": 13,
+      "agent": 7,
+      "broker": 6,
+      "staff": 9,
+      "client": 31,
+      "buy": 17,
+      "rent": 13,
+      "invoice": 17,
+      "contract": 17,
+      "tenant": 10
+    }
+  },
+  "permissions": {
+    "admin": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "approvals": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "leads": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "owners": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "staff": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "agents": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "brokers": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "clients": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "buyRequests": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "rentRequests": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "tenants": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "invoices": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "contracts": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "reports": [
+        "view"
+      ],
+      "settings": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ]
+    },
+    "staff": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "approvals": [
+        "view"
+      ],
+      "leads": [
+        "view",
+        "create",
+        "edit",
+        "delete"
+      ],
+      "owners": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "agents": [
+        "view"
+      ],
+      "brokers": [
+        "view"
+      ],
+      "clients": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "buyRequests": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "rentRequests": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "tenants": [
+        "view"
+      ],
+      "invoices": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "contracts": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "reports": [
+        "view"
+      ]
+    },
+    "agent": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "leads": [
+        "view",
+        "edit"
+      ],
+      "clients": [
+        "view"
+      ],
+      "buyRequests": [
+        "view"
+      ],
+      "rentRequests": [
+        "view"
+      ]
+    },
+    "broker": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "leads": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "owners": [
+        "view",
+        "create"
+      ],
+      "clients": [
+        "view"
+      ],
+      "buyRequests": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "invoices": [
+        "view"
+      ],
+      "contracts": [
+        "view"
+      ]
+    },
+    "owner": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view",
+        "create",
+        "edit"
+      ],
+      "buyRequests": [
+        "view"
+      ],
+      "rentRequests": [
+        "view"
+      ],
+      "tenants": [
+        "view"
+      ],
+      "invoices": [
+        "view"
+      ],
+      "contracts": [
+        "view"
+      ]
+    },
+    "client": {
+      "dashboard": [
+        "view"
+      ],
+      "properties": [
+        "view"
+      ],
+      "buyRequests": [
+        "view",
+        "create"
+      ],
+      "rentRequests": [
+        "view",
+        "create"
+      ],
+      "tenants": [
+        "view"
+      ],
+      "invoices": [
+        "view"
+      ],
+      "contracts": [
+        "view"
+      ]
+    }
+  }
+}
