@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { DB } from '../shared/types';
+import type { Store } from './core';
 
 const repoData = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../data');
 const dataDir = () => process.env.DATA_DIR ?? repoData;
@@ -34,3 +35,5 @@ export function save(): void {
   fs.writeFileSync(tmp, JSON.stringify(db, null, 2));
   fs.renameSync(tmp, dbFile());
 }
+
+export const nodeStore: Store = { db: getDb, save, reset, sessions: new Map<string, string>() };

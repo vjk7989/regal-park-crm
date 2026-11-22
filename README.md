@@ -2,6 +2,9 @@
 
 White-labelled real-estate CRM for **Sterlitee Regal Park** (Neotown, Electronic City, Bengaluru), modelled on the Perfex "Real Estate Management" module. TypeScript end to end, JSON file storage, Indian mock data.
 
+## Live demo
+https://vjk7989.github.io/regal-park-crm/ — runs fully in the browser (data is stored in your browser; Settings → Data → Reset restores the demo data). Deployed by GitHub Actions on every push to `main` (`.github/workflows/pages.yml`).
+
 ## Run locally
 ```
 npm install

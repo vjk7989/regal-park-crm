@@ -38,3 +38,8 @@ Markers at line end: `[ ]` pending · `[.]` ongoing (note) · `[x]` done
 ## Phase 4 — user follow-ups (2026-11-22)
 - R1 · D3 · Roles page (/roles): all 6 roles with access summary; click = view the app as that role; "Switch role" in topbar + link on login [x]
 - H1 · Hosting: decide with user (local run vs GitHub repo + hosted deploy) [ ]
+- H1 decided: public repo + GitHub Pages via Actions, in-browser API (ADR-8) [.]
+- S1 · D1 · server/core.ts framework-agnostic handleRequest + Store interface; express adapter; no node-only imports in core [x]
+- S2 · D3 · client/localApi.ts (localStorage Store + sessions, seed import) + api.ts static switch + router basename + base-aware redirects [x]
+- S3 · D2 · .github/workflows/pages.yml, vite base from env, 404.html, build:pages script [x]
+- S4 · Orchestrator · create public repo vjk7989/regal-park-crm, push, enable Pages, verify live [ ]

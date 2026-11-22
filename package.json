@@ -10,7 +10,8 @@
     "seed": "tsx scripts/seed.ts",
     "typecheck": "tsc --noEmit -p .",
     "test": "vitest run",
-    "build": "vite build"
+    "build": "vite build",
+    "build:pages": "node scripts/build-pages.mjs"
   },
   "dependencies": {
     "express": "^4.19.2",

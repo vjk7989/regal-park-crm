@@ -53,6 +53,7 @@ export default function Login() {
             <input id="password" type="password" value={password} onChange={e => setPassword(e.target.value)} required />
           </div>
           <Button type="submit" disabled={busy}>Sign in</Button>
+          {import.meta.env.VITE_STATIC === '1' && <p className="muted">Live demo — data is stored in your browser. Use Settings → Data → Reset to restore.</p>}
           <div className="demo-title">Quick demo login</div>
           <div className="demo-grid">
             {DEMOS.map(d => (

@@ -1,11 +1,10 @@
-import { randomUUID } from 'node:crypto';
 import { LEAD_STATUSES } from '../shared/types';
 import type { Contract, DB, Invoice, Payment, PropertyRequest, RequestStatus, Settings, Tenant } from '../shared/types';
 import { HttpError } from './auth';
 
 type Rec = Record<string, any>;
 const DAY = 86400000;
-export const newId = () => randomUUID().slice(0, 8);
+export const newId = () => globalThis.crypto.randomUUID().slice(0, 8);
 export const today = () => new Date().toISOString().slice(0, 10);
 const addDays = (iso: string, n: number) => new Date(new Date(iso).getTime() + n * DAY).toISOString().slice(0, 10);
 const addMonths = (iso: string, n: number) => { const d = new Date(iso); d.setUTCMonth(d.getUTCMonth() + n); return d.toISOString().slice(0, 10); };
