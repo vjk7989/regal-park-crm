@@ -133,3 +133,19 @@ Routes & pages (`client/pages/`):
 - `/reports` Reports.tsx — report picker (8 reports from §5) → DataTable + CSV export.
 - `/settings` Settings.tsx — tabs: General (branding fields, showBrokerPortal, requirePropertyApproval), Prefixes (prefix + next number), Plans (CRUD), Users (CRUD users, role, linked record, active), Permissions (role × module checkbox matrix V/C/E/D), Data (Reset demo data button with confirm).
 Every button must do something real against the API; after mutations refresh lists and show a toast. Hidden/disabled buttons when `can()` is false.
+
+## 8. Integration notes (as built in Phase 1 — read before writing a page)
+Client components (`client/components/`):
+- `ui.tsx`: Button (variant primary|gold|ghost|danger|success, size="sm"), Badge, StatusBadge (colour map for all statuses), Card, StatCard, Tabs, ConfirmDialog, PageHeader, Empty, ToastProvider, `useToast()` → `toast(msg, 'success'|'error'|'info')`, SearchCtx (topbar search; DataTable already consumes it).
+- `DataTable.tsx` default export, props `{columns, rows, actions?, search?, exportName?, emptyMessage?}`; Column `{key, label, render?, sortValue?, width?}` (search/sort/CSV use sortValue or row[key]).
+- `FormModal.tsx` default export, props `{title, fields, initial?, submitLabel?, onSubmit(values): Promise, onClose}`; closes itself when onSubmit resolves, shows thrown Error inline; numbers converted; exported types Field, FieldOption, FormValues. Field types: text, number, email, tel, date, select, multiselect, textarea, checkbox.
+- `api.ts`: `api.get/post/put/del<T>(path, body?)` (path WITHOUT /api prefix, e.g. `api.get('/properties')`), throws Error(message) with `.status`/`.field`.
+- `auth.tsx`: `useAuth()` → `{user, loading, permissions, settings, login, logout, can(module, action)}`, `BRANDING`.
+- theme.css classes available: .stat-grid, .grid-2, .filters, .kanban, .kv, .hero, .thumb, plus cards/tables/badges/buttons/modal/tabs/form grid.
+- Shared: `../../shared/format` (formatINR, formatShort, formatDate, isIndianMobile), `../../shared/types` (types + status/source arrays, ROLE_LABELS).
+Server behaviour:
+- Out-of-scope record → 403, missing → 404. Non-admin roles may get 403 on lookups (e.g. agent/client loading /owners, /agents, /brokers): pages MUST tolerate a 403 on secondary lookups (show code/"—" instead of crashing).
+- GET /plans, /settings, /permissions: any logged-in user. Dashboard extra fields: leadsThisMonth, siteVisitsScheduled; aggregate arrays are `[{name, value}]`.
+- Client creating a request: clientId forced to own. Agent/broker/owner-created property or lead is force-linked to them. Non-admin property create → approval pending, status Pending (admin approve → Active).
+- Request defaults: status Submitted; rent termMonths 11. Closed requests (Cancelled/Complete/Expired) cannot change status (400). POST /requests/:id/invoice creates a NEW invoice each call (relinks invoiceId); contract is created once.
+- Optional numbers sent as '' are stored as undefined. Seed phones look like "+91 98450 12345". Rental properties: price = rentalPrice = monthly rent. Buy requests termMonths 0.
