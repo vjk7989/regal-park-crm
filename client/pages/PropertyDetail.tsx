@@ -9,11 +9,13 @@ import { RequestModal } from './Requests';
 
 export default function PropertyDetail() {
   const { id } = useParams();
-  const { can } = useAuth();
+  const { can, user } = useAuth();
+  const me = user?.linkedId, myName = user?.name;
   const toast = useToast();
   const nav = useNavigate();
   const [p, setP] = useState<Property | null>(null);
   const [names, setNames] = useState<{ owner?: string; agent?: string; broker?: string }>({});
+  const [denied, setDenied] = useState<Record<string, string | undefined>>({});
   const [reqs, setReqs] = useState<PropertyRequest[]>([]);
   const [modal, setModal] = useState(false);
 
@@ -21,7 +23,8 @@ export default function PropertyDetail() {
     api.get<Property>(`/properties/${id}`).then(prop => {
       setP(prop);
       for (const [k, col, pid] of [['owner', 'owners', prop.ownerId], ['agent', 'agents', prop.agentId], ['broker', 'brokers', prop.brokerId]] as const) {
-        if (pid) api.get<{ name: string }>(`/${col}/${pid}`).then(r => setNames(s => ({ ...s, [k]: r.name }))).catch(() => undefined);
+        if (pid) api.get<{ name: string }>(`/${col}/${pid}`).then(r => setNames(s => ({ ...s, [k]: r.name })))
+          .catch(() => { setDenied(s => ({ ...s, [k]: pid })); });
       }
     }).catch(e => toast(e.message, 'error'));
     api.get<PropertyRequest[]>('/requests').then(r => setReqs(r.filter(x => x.propertyId === id))).catch(() => setReqs([]));
@@ -39,13 +42,15 @@ export default function PropertyDetail() {
       <PageHeader title={p.name} subtitle={p.project}
         actions={<>
           {can('properties', 'edit') && <Button onClick={() => nav(`/properties/${p.id}/edit`)}>Edit</Button>}{' '}
-          {can(reqModule, 'create') && p.approval === 'approved' && <Button variant="gold" onClick={() => setModal(true)}>{rent ? 'Create rental request' : 'Create buy request'}</Button>}
+          {can(reqModule, 'create') && p.approval === 'approved' && ['Active', 'New', 'Pending Sale', 'Backup'].includes(p.status) && <Button variant="gold" onClick={() => setModal(true)}>{rent ? 'Create rental request' : 'Create buy request'}</Button>}
         </>} />
       <div className="hero">
         <div>
           <div>{p.name}</div>
           <div style={{ fontSize: 14, fontFamily: 'inherit', display: 'flex', gap: 8, alignItems: 'center', marginTop: 6 }}>
-            <span>{p.code}</span><StatusBadge status={p.status} /><StatusBadge status={p.approval} />
+            <span className="hero-pill"><span className="badge badge-grey" style={{ background: 'rgba(255,255,255,.9)', color: '#3C1300' }}>{p.code}</span></span>
+            <span style={{ background: 'rgba(255,255,255,.9)', borderRadius: 12 }}><StatusBadge status={p.status} /></span>
+            <span style={{ background: 'rgba(255,255,255,.9)', borderRadius: 12 }}><StatusBadge status={p.approval} /></span>
             <strong>{formatINR(p.price)}{rent ? '/mo' : ''}</strong>
           </div>
         </div>
@@ -59,7 +64,7 @@ export default function PropertyDetail() {
           {kv('Possession', p.possessionDate ? formatDate(p.possessionDate) : undefined)}{kv('Reservation amount', p.reservationAmount != null ? formatINR(p.reservationAmount) : undefined)}
           {kv('Maintenance fee', p.maintenanceFee != null ? formatINR(p.maintenanceFee) : undefined)}{kv('Privacy', p.listingPrivacy)}
           {kv('Address', [p.address, p.city, p.state, p.zip].filter(Boolean).join(', '))}
-          {kv('Owner', names.owner)}{kv('Agent', names.agent)}{kv('Broker', names.broker)}
+          {(['owner', 'agent', 'broker'] as const).map(k => kv(k[0].toUpperCase() + k.slice(1), names[k] ?? (me && denied[k] === me ? myName : undefined)))}
         </dl>
         {p.description && <p style={{ marginTop: 12 }}>{p.description}</p>}
         {p.lat != null && p.lng != null && <p><a href={`https://www.google.com/maps?q=${p.lat},${p.lng}`} target="_blank" rel="noreferrer">Open in Google Maps</a></p>}

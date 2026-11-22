@@ -11,6 +11,7 @@ import { getDb, reset, save } from './store';
 
 type Rec = Record<string, any>;
 const COLLECTIONS = ['owners', 'staff', 'agents', 'brokers', 'clients', 'properties', 'leads', 'requests', 'tenants', 'contracts', 'invoices', 'plans', 'users'];
+const NEWEST_FIRST = ['leads', 'requests', 'invoices', 'contracts', 'tenants', 'clients'];
 const PEOPLE = ['owners', 'staff', 'agents', 'brokers', 'clients', 'users', 'plans'];
 const OPTIONAL_NUMBERS = ['rentalPrice', 'maintenanceFee', 'reservationAmount', 'plotSqft', 'floors', 'yearBuilt', 'lat', 'lng', 'budget'];
 const CLOSED = ['Cancelled', 'Complete', 'Expired'];
@@ -108,7 +109,9 @@ export function createApp() {
   api.get('/dashboard', (req, res) => {
     const db = getDb(), u = me(res);
     const list = (c: string) => scopedList(db, u, c);
-    res.json(dashboard(list('properties') as Property[], list('requests'), list('invoices') as Invoice[], list('leads'), String(req.query.period ?? 'all')));
+    const seeLeads = can(db.permissions, u.role, 'leads', 'view');
+    const d = dashboard(list('properties') as Property[], list('requests'), list('invoices') as Invoice[], seeLeads ? list('leads') : [], String(req.query.period ?? 'all'));
+    res.json(seeLeads ? d : { ...d, leadsByStatus: [], leadsBySource: [], recentLeads: [] });
   });
 
   api.get('/reports/:type', (req, res) => {
@@ -218,6 +221,7 @@ export function createApp() {
     if (col !== 'plans') allow(res, moduleFor(col, kind), 'view'); // plans list is open to any signed-in user (plan pickers)
     let rows = scopedList(db, u, col);
     if (col === 'requests' && kind) rows = rows.filter(r => r.kind === kind);
+    if (NEWEST_FIRST.includes(col)) rows = [...rows].sort((a, b) => String(b.createdAt).localeCompare(String(a.createdAt)));
     res.json(rows.map(r => strip(col, r)));
   });
 

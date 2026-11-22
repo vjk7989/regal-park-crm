@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api } from '../api';
-import { BRANDING } from '../auth';
+import { BRANDING, useAuth } from '../auth';
 import { Button, Card, Empty, PageHeader, StatCard, StatusBadge, useToast } from '../components/ui';
 import DataTable, { Column } from '../components/DataTable';
 import { formatDate, formatShort } from '../../shared/format';
@@ -58,6 +58,8 @@ function BarCard({ title, data, color, vertical }: { title: string; data: Point[
 
 export default function Dashboard() {
   const toast = useToast();
+  const { can } = useAuth();
+  const seeLeads = can('leads', 'view');
   const [params, setParams] = useSearchParams();
   const period = params.get('period') ?? 'all';
   const [d, setD] = useState<Dash | null>(null);
@@ -101,20 +103,26 @@ export default function Dashboard() {
             <StatCard label="For lease" value={d.forLease} />
             <StatCard label="Rented" value={d.rented} />
             <StatCard label="Available" value={d.available} />
+            {seeLeads && <>
             <StatCard label="Leads this month" value={d.leadsThisMonth} />
             <StatCard label="Site visits scheduled" value={d.siteVisitsScheduled} />
+            </>}
           </div>
           <div className="grid-2">
             <PieCard title="Property status" data={d.propertyByStatus} />
             <PieCard title="Buy requests by status" data={d.buyByStatus} />
             <PieCard title="Rent requests by status" data={d.rentByStatus} />
             <BarCard title="Top cities" data={d.topCities} color="#3C1300" />
-            <BarCard title="Leads by source" data={d.leadsBySource} color="#0D6EFD" />
+            {seeLeads && <>
+            <BarCard title="Leads by source" data={d.leadsBySource} color="#0D6EFD" vertical />
             <BarCard title="Leads funnel" data={d.leadsByStatus} color="#D9BD77" vertical />
+            </>}
           </div>
+          {seeLeads && (
           <Card title="Recent leads">
             <DataTable columns={leadCols} rows={d.recentLeads} exportName="recent-leads" emptyMessage="No leads in this period." />
           </Card>
+          )}
         </>
       )}
     </>

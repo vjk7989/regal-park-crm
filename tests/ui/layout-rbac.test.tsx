@@ -61,6 +61,8 @@ const EXPECTED: Record<Role, string[]> = {
   owner: ['Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts'],
   client: ['Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts'],
 };
+// PLAN §9 / ADR-7: every logged-in sidebar ends with an always-present "All Roles" link (no permission check).
+const withAllRoles = (labels: string[]) => [...labels, 'All Roles'];
 
 describe('Sidebar shows only modules the role can view (PLAN §4)', () => {
   for (const role of Object.keys(EXPECTED) as Role[]) {
@@ -68,7 +70,7 @@ describe('Sidebar shows only modules the role can view (PLAN §4)', () => {
       serverAs(role);
       renderApp('/');
       await waitShell();
-      expect(sidebarLabels()).toEqual(EXPECTED[role]);
+      expect(sidebarLabels()).toEqual(withAllRoles(EXPECTED[role]));
     });
   }
 
@@ -129,7 +131,7 @@ describe('Sidebar shows only modules the role can view (PLAN §4)', () => {
     fetchMock.mockImplementation(async (url: string, init: any) => (url === '/api/permissions' ? json(500, { error: 'x' }) : base(url, init)));
     renderApp('/');
     await waitShell();
-    expect(sidebarLabels()).toEqual(EXPECTED.broker);
+    expect(sidebarLabels()).toEqual(withAllRoles(EXPECTED.broker));
   });
 });
 

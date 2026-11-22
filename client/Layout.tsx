@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Users, Building2, CheckSquare, KeyRound, ShoppingCart, UserCheck, FileText, Receipt, FileSignature,
-  UserCog, Briefcase, Handshake, UsersRound, BarChart3, Settings as SettingsIcon, LogOut, Menu, Search, type LucideIcon,
+  UserCog, Briefcase, Handshake, UsersRound, BarChart3, Settings as SettingsIcon, LogOut, Menu, Search, Shield, Repeat, type LucideIcon,
 } from 'lucide-react';
 import type { Module } from '../shared/types';
 import { useAuth } from './auth';
@@ -64,6 +64,7 @@ export default function Layout() {
               </div>
             );
           })}
+          <div className="nav-group"><NavLink to="/roles" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}><Shield size={17} /> <span>All Roles</span></NavLink></div>
         </nav>
         <div className="sidebar-foot">{settings.projectName}</div>
       </aside>
@@ -79,6 +80,7 @@ export default function Layout() {
               <strong>{user?.name}</strong>
               <span className={`role-badge role-${user?.role}`}>{user?.role}</span>
             </div>
+            <Link to="/roles" className="btn btn-ghost btn-sm switch-role"><Repeat size={15} /> Switch role</Link>
             <button className="btn btn-ghost btn-sm" onClick={logout}><LogOut size={15} /> Logout</button>
           </div>
         </header>

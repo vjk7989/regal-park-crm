@@ -1,6 +1,7 @@
 import React from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import type { Module } from '../shared/types';
+import Roles from './pages/Roles';
 import { useAuth } from './auth';
 import Layout from './Layout';
 import { Card } from './components/ui';
@@ -34,6 +35,9 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
+      <Route element={user ? <Layout /> : <Outlet />}>
+        <Route path="/roles" element={<Roles />} />
+      </Route>
       <Route element={user ? <Layout /> : <Navigate to="/login" replace />}>
         <Route path="/" element={g('dashboard', <Dashboard />)} />
         <Route path="/properties" element={g('properties', <Properties />)} />

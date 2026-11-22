@@ -2,6 +2,7 @@
 import React from 'react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import Login from '../../client/pages/Login';
 import { AuthProvider, useAuth } from '../../client/auth';
 import { ConfirmDialog, StatusBadge, Tabs, ToastProvider, useToast } from '../../client/components/ui';
@@ -29,7 +30,8 @@ describe('Login page', () => {
   });
 
   const Who = () => { const { user } = useAuth(); return <div data-testid="who">{user?.email ?? 'none'}</div>; };
-  const renderLogin = () => render(<AuthProvider><Login /><Who /></AuthProvider>);
+  // Login renders a router <Link> to /roles (PLAN §9), so it needs a router context.
+  const renderLogin = () => render(<AuthProvider><MemoryRouter initialEntries={['/login']}><Login /><Who /></MemoryRouter></AuthProvider>);
 
   it('shows branding, email/password fields and six Quick demo login role buttons', () => {
     renderLogin();

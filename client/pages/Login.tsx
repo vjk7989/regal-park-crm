@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth, BRANDING } from '../auth';
+import { Link } from 'react-router-dom';
 import { Button } from '../components/ui';
 
 const DEMOS = [
@@ -58,6 +59,7 @@ export default function Login() {
               <Button key={d.role} type="button" variant="ghost" disabled={busy} onClick={() => void go(d.email, 'demo123')}>{d.role}</Button>
             ))}
           </div>
+          <div className="login-roles-link"><Link to="/roles">See all roles →</Link></div>
         </form>
       </div>
     </div>

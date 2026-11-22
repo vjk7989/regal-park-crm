@@ -29,4 +29,12 @@ Markers at line end: `[ ]` pending · `[.]` ongoing (note) · `[x]` done
 - P.test · Opus test-writer: UI tests per page (RBAC visibility, CRUD flows); Haiku runs gate — 1995 tests, Haiku gate GREEN [x]
 
 ## Phase 3 — verification
-- V1 · Browser smoke test every page as each of the 6 roles, fix what breaks [.]
+- V1 · Browser smoke test every page as each of the 6 roles, fix what breaks [x]
+- V1.a · D1 · Dashboard lead data hidden for roles without leads view (server + UI); leads-by-source chart labels; lists newest first [x]
+- V1.b · D2 · PropertyDetail: request button only on available props; readable hero badges; own name for self-links [x]
+- V1.c · D3 · Tables: no-wrap cells + horizontal scroll, Actions column visible [x]
+- V1.d · D1 · Server listened on generic PORT (clashed with Vite) → API_PORT||4000 [x]
+
+## Phase 4 — user follow-ups (2026-11-22)
+- R1 · D3 · Roles page (/roles): all 6 roles with access summary; click = view the app as that role; "Switch role" in topbar + link on login [x]
+- H1 · Hosting: decide with user (local run vs GitHub repo + hosted deploy) [ ]

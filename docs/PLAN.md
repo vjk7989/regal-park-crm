@@ -149,3 +149,7 @@ Server behaviour:
 - Client creating a request: clientId forced to own. Agent/broker/owner-created property or lead is force-linked to them. Non-admin property create → approval pending, status Pending (admin approve → Active).
 - Request defaults: status Submitted; rent termMonths 11. Closed requests (Cancelled/Complete/Expired) cannot change status (400). POST /requests/:id/invoice creates a NEW invoice each call (relinks invoiceId); contract is created once.
 - Optional numbers sent as '' are stored as undefined. Seed phones look like "+91 98450 12345". Rental properties: price = rentalPrice = monthly rent. Buy requests termMonths 0.
+
+## 9. Roles page (user request 2026-11-22)
+- Public route `/roles` (inside Layout when logged in, standalone branded page when logged out): 6 role cards (icon, description, demo email, chips of modules the role can VIEW from the live matrix or DEFAULT_PERMISSIONS, "Current" badge, "Portal disabled" on broker when showBrokerPortal=false). "View as <Role>" = logout current session, login as that role's demo user (password demo123), navigate to "/".
+- Every logged-in user's sidebar ends with an "All Roles" link (no permission check); topbar has "Switch role" → /roles; Login page has "See all roles →" → /roles.
