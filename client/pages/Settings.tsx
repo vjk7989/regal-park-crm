@@ -6,6 +6,8 @@ import DataTable, { Column } from '../components/DataTable';
 import FormModal, { Field, FormValues } from '../components/FormModal';
 import { formatINR } from '../../shared/format';
 import { MODULES, ROLES, ROLE_LABELS } from '../../shared/types';
+import { REGISTRY } from '../../shared/registry';
+import { modId } from '../moduleUtil';
 import type { Action, Module, PermissionMatrix, Plan, Role, Settings as SettingsT, User } from '../../shared/types';
 
 type Tab = 'general' | 'prefixes' | 'plans' | 'users' | 'permissions' | 'data';
@@ -234,9 +236,16 @@ function Permissions() {
   const { can } = useAuth();
   const toast = useToast();
   const [m, setM] = useState<PermissionMatrix | null>(null);
+  const [closed, setClosed] = useState<Record<string, boolean>>({});
   useEffect(() => { api.get<PermissionMatrix>('/permissions').then(setM).catch(e => toast(msg(e), 'error')); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!m) return <Card>Loading...</Card>;
   const editable = can('settings', 'edit');
+  const sections: { title: string; rows: { id: Module; label: string }[] }[] = [{ title: 'Real Estate', rows: MODULES.map(x => ({ id: x, label: x })) }];
+  for (const mod of REGISTRY) {
+    let sec = sections.find(x => x.title === mod.group);
+    if (!sec) sections.push(sec = { title: mod.group, rows: [] });
+    sec.rows.push({ id: modId(mod.key), label: mod.label });
+  }
   const toggle = (r: Role, mod: Module, a: Action, on: boolean) => {
     const cur = m[r][mod] ?? [];
     setM({ ...m, [r]: { ...m[r], [mod]: on ? [...cur.filter(x => x !== a), a] : cur.filter(x => x !== a) } });
@@ -253,19 +262,30 @@ function Permissions() {
             <tr>{ROLES.map(r => ACTIONS.map(x => <th key={r + x.a} style={{ textAlign: 'center' }}>{x.l}</th>))}</tr>
           </thead>
           <tbody>
-            {MODULES.map(mod => (
-              <tr key={mod}>
-                <td>{mod}</td>
-                {ROLES.map(r => ACTIONS.map(x => {
-                  const locked = r === 'admin' && mod === 'settings';
-                  return (
-                    <td key={r + x.a} style={{ textAlign: 'center' }}>
-                      <input type="checkbox" aria-label={`${r} ${mod} ${x.a}`} disabled={locked || !editable}
-                        checked={locked || (m[r][mod] ?? []).includes(x.a)} onChange={e => toggle(r, mod, x.a, e.target.checked)} />
-                    </td>
-                  );
-                }))}
-              </tr>
+            {sections.map(sec => (
+              <React.Fragment key={sec.title}>
+                <tr className="perm-group">
+                  <td colSpan={1 + ROLES.length * 4}>
+                    <button type="button" className="perm-toggle" aria-expanded={!closed[sec.title]} onClick={() => setClosed(c => ({ ...c, [sec.title]: !c[sec.title] }))}>
+                      {closed[sec.title] ? '▸' : '▾'} {sec.title} <span className="muted">({sec.rows.length})</span>
+                    </button>
+                  </td>
+                </tr>
+                {!closed[sec.title] && sec.rows.map(({ id: mod, label }) => (
+                  <tr key={mod}>
+                    <td>{label}</td>
+                    {ROLES.map(r => ACTIONS.map(x => {
+                      const locked = r === 'admin' && mod === 'settings';
+                      return (
+                        <td key={r + x.a} style={{ textAlign: 'center' }}>
+                          <input type="checkbox" aria-label={`${r} ${mod} ${x.a}`} disabled={locked || !editable}
+                            checked={locked || (m[r][mod] ?? []).includes(x.a)} onChange={e => toggle(r, mod, x.a, e.target.checked)} />
+                        </td>
+                      );
+                    }))}
+                  </tr>
+                ))}
+              </React.Fragment>
             ))}
           </tbody>
         </table>

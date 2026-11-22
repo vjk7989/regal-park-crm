@@ -1,9 +1,12 @@
 import { can, DEFAULT_PERMISSIONS } from '../shared/permissions';
+import { moduleByKey } from '../shared/registry';
 import { isIndianMobile } from '../shared/format';
 import { MODULES, moduleFor, REQUEST_STATUSES, ROLES } from '../shared/types';
 import type { Action, Contract, DB, Invoice, Module, PermissionMatrix, Property, PropertyRequest, RequestStatus, User } from '../shared/types';
 import { HttpError, login, publicUser } from './auth';
 import { addPayment, CODE_FIELD, createContract, createInvoice, dashboard, newId, nextCode, report, REPORT_TYPES, setRequestStatus, today } from './domain';
+import { canSeeOverview, overviewFor } from './overview';
+import { xRoutes } from './xcore';
 import { ownerFieldFor, scopedList } from './scope';
 
 export interface Sessions { get(token: string): string | undefined; set(token: string, userId: string): void; delete(token: string): void }
@@ -109,7 +112,7 @@ const requestFor = (c: Ctx, module: Module | 'contracts' | 'invoices', action: A
 
 const UNSAFE = ['__proto__', 'constructor', 'prototype'];
 /** The body as a fresh plain object (unsafe keys dropped); anything but an object is a 400. A missing body counts as {}. */
-function objBody(c: Ctx): Rec {
+export function objBody(c: Ctx): Rec {
   const b = c.req.body;
   if (b === undefined) return {};
   if (typeof b !== 'object' || b === null || Array.isArray(b)) throw bad('body', 'Request body must be a JSON object');
@@ -130,6 +133,12 @@ const routes: [string, string, Handler][] = [
     const seeLeads = can(db.permissions, u.role, 'leads', 'view');
     const d = dashboard(list('properties') as Property[], list('requests'), list('invoices') as Invoice[], seeLeads ? list('leads') : [], String(c.req.query.period ?? 'all'));
     return ok(seeLeads ? d : { ...d, leadsByStatus: [], leadsBySource: [], recentLeads: [] });
+  }],
+
+  ['GET', '/overview', c => {
+    const db = c.store.db();
+    if (!canSeeOverview(db, c.user)) throw new HttpError(403, 'Forbidden');
+    return ok(overviewFor(db, c.user));
   }],
 
   ['GET', '/reports/:type', c => {
@@ -155,7 +164,7 @@ const routes: [string, string, Handler][] = [
     allow(c, 'settings', 'edit');
     const m = objBody(c) as PermissionMatrix;
     if (!m || typeof m !== 'object' || ROLES.some(r => typeof m[r] !== 'object')) throw bad('permissions', 'Invalid permission matrix');
-    for (const r of ROLES) for (const k of Object.keys(m[r])) if (!MODULES.includes(k as Module)) throw bad('permissions', `Unknown module ${k}`);
+    for (const r of ROLES) for (const k of Object.keys(m[r])) if (!MODULES.includes(k as Module) && !(k.startsWith('m:') && moduleByKey(k.slice(2)))) throw bad('permissions', `Unknown module ${k}`);
     m.admin.settings = [...DEFAULT_PERMISSIONS.admin.settings!]; // admin can never lose settings rights
     c.store.db().permissions = m;
     c.store.save();
@@ -223,6 +232,8 @@ const routes: [string, string, Handler][] = [
     c.store.save();
     return ok(inv);
   }],
+
+  ...xRoutes, // module engine; must precede the generic /:col routes (GET /calendar, /x/:entity)
 
   // ---- generic CRUD ----
   ['GET', '/:col', c => {

@@ -7,6 +7,7 @@ import Layout from './Layout';
 import { Card } from './components/ui';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Overview from './pages/Overview';
 import Properties from './pages/Properties';
 import PropertyForm from './pages/PropertyForm';
 import PropertyDetail from './pages/PropertyDetail';
@@ -19,11 +20,17 @@ import Tenants from './pages/Tenants';
 import Invoices, { Contracts } from './pages/Billing';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import ModulePage from './pages/module/ModulePage';
 
 function Guard({ module, alt, children }: { module: Module; alt?: Module; children: React.ReactNode }) {
   const { can } = useAuth();
   if (!can(module, 'view') && !(alt && can(alt, 'view'))) return <Card title="Access denied">You do not have permission to view this page.</Card>;
   return <>{children}</>;
+}
+
+function Home() {
+  const { can } = useAuth();
+  return can('m:sales', 'view') || can('m:projects', 'view') ? <Overview /> : <Guard module="dashboard"><Dashboard /></Guard>;
 }
 
 const g = (module: Module, el: React.ReactNode) => <Guard module={module}>{el}</Guard>;
@@ -39,7 +46,10 @@ export default function App() {
         <Route path="/roles" element={<Roles />} />
       </Route>
       <Route element={user ? <Layout /> : <Navigate to="/login" replace />}>
-        <Route path="/" element={g('dashboard', <Dashboard />)} />
+        <Route path="/" element={<Home />} />
+        <Route path="/real-estate" element={g('dashboard', <Dashboard />)} />
+        <Route path="/m/:module" element={<ModulePage />} />
+        <Route path="/m/:module/:page" element={<ModulePage />} />
         <Route path="/properties" element={g('properties', <Properties />)} />
         <Route path="/properties/new" element={g('properties', <PropertyForm />)} />
         <Route path="/properties/:id/edit" element={g('properties', <PropertyForm />)} />

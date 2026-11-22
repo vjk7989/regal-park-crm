@@ -5,6 +5,8 @@ import type {
   PropertyStatus, RequestStatus, Staff, Tenant, User,
 } from '../shared/types';
 import { DEFAULT_PERMISSIONS } from '../shared/permissions';
+import { REGISTRY } from '../shared/registry';
+import { generateRegistryData } from '../shared/seedgen';
 
 // ---------- deterministic helpers ----------
 let state = 20261122;
@@ -394,7 +396,10 @@ const settings: DB['settings'] = {
 const db: DB = {
   users, owners, staff, agents, brokers, clients, properties, leads, requests, tenants, contracts, invoices, plans, settings,
   permissions: JSON.parse(JSON.stringify(DEFAULT_PERMISSIONS)),
+  x: {}, xNext: {}, moduleSettings: {},
 };
+const gen = generateRegistryData(REGISTRY, db, rnd, TODAY);
+Object.assign(db, gen);
 
 // ---------- integrity ----------
 const errors: string[] = [];
@@ -420,6 +425,22 @@ for (const u of users) {
   if (u.role === 'admin') continue;
   if (!u.linkedId || !linkSets[u.role].has(u.linkedId)) errors.push(`user ${u.email}.linkedId -> ${u.linkedId}`);
 }
+const xIds: Record<string, Set<string>> = Object.fromEntries(Object.entries(gen.x).map(([k, v]) => [k, ids(v as { id: string }[])]));
+const coreSets: Record<string, Set<string>> = { clients: S.cli, users: S.usr, properties: S.prp, staff: ids(staff), agents: S.agt, brokers: S.brk, owners: S.own, leads: ids(leads) };
+for (const [k, arr] of Object.entries(gen.x)) {
+  const seen = new Set<string>();
+  for (const r of arr) { if (seen.has(r.id)) errors.push(`duplicate id x:${r.id}`); seen.add(r.id); }
+  for (const r of arr) chk(S.usr, r.createdBy, `x ${r.id}.createdBy`);
+}
+for (const e of REGISTRY.flatMap(m => m.entities)) {
+  for (const f of e.fields) {
+    if (f.type !== 'ref' || !f.ref) continue;
+    const set = coreSets[f.ref] ?? xIds[f.ref];
+    if (!set) { errors.push(`x ${e.key}.${f.key} -> unknown ref target ${f.ref}`); continue; }
+    for (const r of gen.x[e.key]) chk(set, r[f.key], `x ${r.id}.${f.key}`);
+    if (!gen.x[e.key].some(r => r[f.key] !== undefined)) console.warn(`note: ${e.key}.${f.key} -> ${f.ref} has no values (target empty or generated later)`);
+  }
+}
 // demo minimums
 const agU = uid('agent@regalpark.demo'), brU = uid('broker@regalpark.demo'), owU = users.find(u => u.email === 'owner@regalpark.demo')!, clU = users.find(u => u.email === 'client@regalpark.demo')!;
 const cAgent = properties.filter(p => p.agentId === agents[0].id).length;
@@ -436,13 +457,17 @@ if (cBroker < 4) errors.push(`broker props ${cBroker} < 4`);
 if (ownerRentals.length < 3 || ownerTenancies < 1) errors.push('owner minimums');
 if (!clientBuy || !clientTen || !clientInv) errors.push('client minimums');
 
+const CHECK = process.argv.includes('--check');
 const dir = path.resolve(process.cwd(), 'data');
-fs.mkdirSync(dir, { recursive: true });
-fs.writeFileSync(path.join(dir, 'seed.json'), JSON.stringify(db, null, 2) + '\n');
+const json = JSON.stringify(db, null, 2) + '\n';
+if (!CHECK) {
+  fs.mkdirSync(dir, { recursive: true });
+  fs.writeFileSync(path.join(dir, 'seed.json'), json);
+}
 
 const by = <T,>(arr: T[], f: (x: T) => string) => arr.reduce<Record<string, number>>((m, x) => { const k = f(x); m[k] = (m[k] ?? 0) + 1; return m; }, {});
 const soon = tenants.filter(t => t.status === 'Active' && ms(t.leaseEnd) - ms(TODAY) <= 90 * DAY).length;
-console.log('Seed written: data/seed.json');
+console.log(CHECK ? 'Check only (seed.json not written)' : 'Seed written: data/seed.json');
 console.log(`users ${users.length} | owners ${owners.length} | staff ${staff.length} | agents ${agents.length} | brokers ${brokers.length} | clients ${clients.length} | plans ${plans.length}`);
 console.log(`properties ${properties.length} (villas ${villaCount}, other ${others.length}) | approval ${JSON.stringify(by(properties, p => p.approval))}`);
 console.log(`leads ${leads.length} ${JSON.stringify(by(leads, l => l.status))}`);
@@ -453,4 +478,7 @@ if (errors.length) {
   console.error('FK/integrity errors:\n' + errors.join('\n'));
   process.exit(1);
 }
+console.log(`registry: ${Object.keys(gen.x).length} entities, ${Object.values(gen.x).reduce((n, a) => n + a.length, 0)} records, ${Object.keys(gen.moduleSettings).length} module settings`);
+if (CHECK) for (const m of REGISTRY) console.log(`  ${m.key}: ${m.entities.map(e => `${e.key} ${gen.x[e.key]?.length ?? 0}`).join(', ')}`);
+console.log(`seed.json ${CHECK ? 'projected ' : ''}${(Buffer.byteLength(json) / 1024).toFixed(0)} KB`);
 console.log('Integrity OK');

@@ -7,6 +7,7 @@ import { MemoryRouter, useLocation } from 'react-router-dom';
 
 // Stub every page except Login/Roles so the shell + roles page are tested in isolation (no JSX in factories: hoisted).
 vi.mock('../../client/pages/Dashboard', () => ({ default: () => 'DASHBOARD_PAGE' }));
+vi.mock('../../client/pages/Overview', () => ({ default: () => 'OVERVIEW_PAGE' }));
 vi.mock('../../client/pages/Properties', () => ({ default: () => 'PROPERTIES_PAGE' }));
 vi.mock('../../client/pages/PropertyForm', () => ({ default: () => 'PROPERTYFORM_PAGE' }));
 vi.mock('../../client/pages/PropertyDetail', () => ({ default: () => 'PROPERTYDETAIL_PAGE' }));
@@ -24,6 +25,7 @@ import App from '../../client/App';
 import { AuthProvider } from '../../client/auth';
 import { ToastProvider } from '../../client/components/ui';
 import { DEFAULT_PERMISSIONS } from '../../shared/permissions';
+import { REGISTRY, moduleByKey } from '../../shared/registry';
 
 type Role = 'admin' | 'staff' | 'agent' | 'broker' | 'owner' | 'client';
 const ROLE_ORDER: Role[] = ['admin', 'staff', 'agent', 'broker', 'owner', 'client'];
@@ -40,11 +42,14 @@ const MODULE_LABEL: Record<string, string> = {
   brokers: 'Brokers', clients: 'Clients', buyRequests: 'Buy Requests', rentRequests: 'Rental Requests', tenants: 'Tenants', invoices: 'Invoices',
   contracts: 'Contracts', reports: 'Reports', settings: 'Settings',
 };
-/** Chips expected for a role: modules carrying 'view' in the matrix, in matrix order. */
+/** Chips expected for a role: modules carrying 'view' in the matrix, in matrix order. Registry modules (m:<key>, ADR-9) show
+ *  the registry module label; an unknown m:<key> falls back to the raw permission id. */
+const chipLabel = (m: string) => MODULE_LABEL[m] ?? (m.startsWith('m:') ? moduleByKey(m.slice(2))?.label : undefined) ?? m;
 const viewChips = (matrix: any, role: Role) =>
-  Object.entries(matrix[role] ?? {}).filter(([, a]) => (a as string[]).includes('view')).map(([m]) => MODULE_LABEL[m]);
+  Object.entries(matrix[role] ?? {}).filter(([, a]) => (a as string[]).includes('view')).map(([m]) => chipLabel(m));
 
-const CLIENT_SIDEBAR = ['Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts', 'All Roles'];
+// PLAN §10.4: Dashboard, then the Real Estate branch (open by default; RE dashboard now at /real-estate), All Roles last.
+const CLIENT_SIDEBAR = ['Dashboard', 'Real Estate Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts', 'All Roles'];
 
 const json = (status: number, body: unknown) => ({ ok: status >= 200 && status < 300, status, text: async () => (body === undefined ? '' : JSON.stringify(body)) });
 
@@ -217,6 +222,24 @@ describe('/roles logged in (inside Layout)', () => {
     expect(chipsOf('client')).not.toContain('Reports');
     expect(chipsOf('agent')).not.toContain('Dashboard');
     expect(chipsOf('agent')).toEqual(viewChips(custom, 'agent'));
+  });
+
+  it('m:<key> chips show the registry module label (no raw ids); unknown m:<key> falls back to the raw id', async () => {
+    const custom = JSON.parse(JSON.stringify(DEFAULT_PERMISSIONS));
+    const mod = REGISTRY[0];
+    custom.client[`m:${mod.key}`] = ['view'];
+    custom.client['m:zz_unknown'] = ['view'];
+    server('admin', { matrix: custom });
+    renderApp('/roles');
+    await waitShell();
+    await waitRoles();
+    await waitFor(() => expect(chipsOf('client')).toContain(mod.label));
+    expect(chipsOf('client')).toContain('m:zz_unknown');
+    expect(chipsOf('client')).not.toContain(`m:${mod.key}`);
+    expect(chipsOf('client')).toEqual(viewChips(custom, 'client'));
+    // Default admin/staff chips contain no raw registry ids.
+    expect(chipsOf('admin').filter(c => c?.startsWith('m:'))).toEqual([]);
+    expect(chipsOf('staff').filter(c => c?.startsWith('m:'))).toEqual([]);
   });
 
   it('role missing from the server matrix renders a card with no chips (no crash)', async () => {

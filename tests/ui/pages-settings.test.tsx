@@ -8,6 +8,7 @@ import { AuthProvider } from '../../client/auth';
 import { ToastProvider } from '../../client/components/ui';
 import { DEFAULT_PERMISSIONS } from '../../shared/permissions';
 import { MODULES, ROLES } from '../../shared/types';
+import { REGISTRY } from '../../shared/registry';
 
 // Own fetch mock (page-harness short-circuits /settings and /permissions, which Settings must read AND write).
 type Role = 'admin' | 'staff' | 'agent' | 'broker' | 'owner' | 'client';
@@ -408,9 +409,15 @@ describe('Permissions tab (PLAN §4)', () => {
     serve();
     await open('Permissions');
     await screen.findByText('Save permissions');
-    expect(document.querySelectorAll('input[type=checkbox]').length).toBe(ROLES.length * MODULES.length * 4);
+    // ADR-9 / PLAN §10.2: rows = core MODULES + one m:<key> row per registry module.
+    expect(document.querySelectorAll('input[type=checkbox]').length).toBe(ROLES.length * (MODULES.length + REGISTRY.length) * 4);
     expect(box('client', 'leads', 'view').checked).toBe(false);
     expect(box('staff', 'leads', 'view').checked).toBe(true);
+    if (REGISTRY.length) {
+      const k = `m:${REGISTRY[0].key}`;
+      expect(box('admin', k, 'delete').checked).toBe(true);
+      expect(box('client', k, 'view').checked).toBe(false);
+    }
   });
 
   it('toggling a checkbox and saving PUTs the matrix with exactly that change', async () => {
@@ -425,7 +432,7 @@ describe('Permissions tab (PLAN §4)', () => {
     const sent = writes('PUT', '/permissions')[0].body;
     const expected = clone(DEFAULT_PERMISSIONS) as any;
     expected.client.leads = [...(expected.client.leads ?? []), 'view'];
-    for (const r of ROLES) for (const m of MODULES) {
+    for (const r of ROLES) for (const m of [...MODULES, ...REGISTRY.map(x => `m:${x.key}` as const)]) {
       expect([...(sent[r][m] ?? [])].sort(), `${r}.${m}`).toEqual([...(expected[r][m] ?? [])].sort());
     }
     expect(await screen.findByText('Permissions saved')).toBeTruthy();

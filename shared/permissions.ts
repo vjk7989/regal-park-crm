@@ -1,3 +1,4 @@
+import { REGISTRY } from './registry';
 import type { Action, Module, PermissionMatrix, Role } from './types';
 
 const V: Action[] = ['view'];
@@ -30,6 +31,13 @@ export const DEFAULT_PERMISSIONS: PermissionMatrix = {
     dashboard: [...V], properties: [...V], buyRequests: [...VC], rentRequests: [...VC], tenants: [...V], invoices: [...V], contracts: [...V],
   },
 };
+
+const VIEW_ONLY_FOR_STAFF = ['accounting', 'payroll', 'team_passwords', 'risk'];
+for (const m of REGISTRY) {
+  const id: Module = `m:${m.key}`;
+  DEFAULT_PERMISSIONS.admin[id] = [...VCED];
+  DEFAULT_PERMISSIONS.staff[id] = VIEW_ONLY_FOR_STAFF.includes(m.key) ? [...V] : [...VCE];
+}
 
 export function can(matrix: PermissionMatrix, role: Role, module: Module, action: Action): boolean {
   if (role === 'admin' && module === 'settings') return true;

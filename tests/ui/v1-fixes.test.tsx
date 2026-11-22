@@ -40,7 +40,7 @@ const dash = (role: Role, matrix: unknown = DEFAULT_PERMISSIONS) =>
 describe('V1.a Dashboard hides lead widgets without leads:view', () => {
   it.each(['client', 'owner'] as Role[])('%s (no leads view): lead stat cards, charts and recent table hidden', async role => {
     dash(role);
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     const labels = statLabels();
     for (const l of LEAD_STATS) expect(labels).not.toContain(l);
@@ -56,7 +56,7 @@ describe('V1.a Dashboard hides lead widgets without leads:view', () => {
 
   it.each(['admin', 'staff', 'agent', 'broker'] as Role[])('%s (leads view): all lead widgets visible', async role => {
     dash(role);
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     const labels = statLabels();
     for (const l of LEAD_STATS) expect(labels).toContain(l);
@@ -70,7 +70,7 @@ describe('V1.a Dashboard hides lead widgets without leads:view', () => {
     const m = clone(DEFAULT_PERMISSIONS) as any;
     m.client.leads = ['view'];
     dash('client', m);
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     for (const l of LEAD_STATS) expect(statLabels()).toContain(l);
     expect(screen.getByText('Leads funnel')).toBeTruthy();
@@ -81,7 +81,7 @@ describe('V1.a Dashboard hides lead widgets without leads:view', () => {
     const m = clone(DEFAULT_PERMISSIONS) as any;
     delete m.staff.leads;
     dash('staff', m);
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     for (const l of LEAD_STATS) expect(statLabels()).not.toContain(l);
     expect(screen.queryByText('Recent leads')).toBeNull();

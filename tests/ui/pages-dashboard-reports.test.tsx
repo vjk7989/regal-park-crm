@@ -51,7 +51,7 @@ const statValue = (label: string) => {
 describe('Dashboard page (PLAN §7)', () => {
   it('renders the 10 stat cards in PLAN order', async () => {
     dashServer();
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     const labels = Array.from(document.querySelectorAll('.stat-card .stat-label')).map(e => e.textContent);
     expect(labels).toEqual(STAT_LABELS);
@@ -59,7 +59,7 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('money cards use formatShort (Cr / L); count cards show raw numbers', async () => {
     dashServer();
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     expect(statValue('Sale income')).toBe('₹1.25 Cr');
     expect(statValue('Rental income')).toBe('₹3.5 L');
@@ -70,13 +70,13 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('shows the recent leads table', async () => {
     dashServer();
-    await renderAt('/');
+    await renderAt('/real-estate');
     expect(await screen.findByText('Recent Ravi')).toBeTruthy();
   });
 
   it('zero / empty aggregates do not crash and show empty states', async () => {
     dashServer(EMPTY_DASH);
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     expect(document.querySelectorAll('.stat-card').length).toBe(10);
     expect(statValue('Sale income')).toBe('₹0');
@@ -86,14 +86,14 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('requests /dashboard?period=all by default', async () => {
     const srv = dashServer();
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     expect(srv.calls.some(c => c.path === '/dashboard?period=all')).toBe(true);
   });
 
   it.each(['month', '3m', 'year'])('selecting period %s calls /dashboard?period=%s', async p => {
     const srv = dashServer();
-    await renderAt('/');
+    await renderAt('/real-estate');
     await screen.findByText('Sale income');
     fireEvent.change(screen.getByLabelText('Period'), { target: { value: p } });
     await waitFor(() => expect(srv.calls.some(c => c.path === `/dashboard?period=${p}`)).toBe(true));
@@ -102,7 +102,7 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('period comes from the URL query param', async () => {
     const srv = dashServer();
-    await renderAt('/?period=3m');
+    await renderAt('/real-estate?period=3m');
     await screen.findByText('Sale income');
     expect(srv.calls.some(c => c.path === '/dashboard?period=3m')).toBe(true);
     expect((screen.getByLabelText('Period') as HTMLSelectElement).value).toBe('3m');
@@ -110,7 +110,7 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('switching back to All time calls period=all', async () => {
     const srv = dashServer();
-    await renderAt('/?period=month');
+    await renderAt('/real-estate?period=month');
     await screen.findByText('Sale income');
     fireEvent.change(screen.getByLabelText('Period'), { target: { value: 'all' } });
     await waitFor(() => expect(srv.calls.some(c => c.path === '/dashboard?period=all')).toBe(true));
@@ -118,7 +118,7 @@ describe('Dashboard page (PLAN §7)', () => {
 
   it('server error shows an error toast, not a crash', async () => {
     dashServer({ error: 'Boom' }, 500);
-    await renderShell('/');
+    await renderShell('/real-estate');
     await waitFor(() => expect(toastsOf('error').join()).toContain('Boom'));
     expect(screen.getByRole('heading', { name: 'Dashboard' })).toBeTruthy();
   });

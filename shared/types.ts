@@ -32,10 +32,11 @@ export interface Settings { companyName: string; productName: string; projectNam
   prefixes: { property: string; owner: string; agent: string; broker: string; staff: string; client: string; buy: string; rent: string; invoice: string; contract: string; tenant: string };
   nextNumbers: Record<keyof Settings['prefixes'], number> }
 export type Action = 'view'|'create'|'edit'|'delete';
-export type Module = 'dashboard'|'properties'|'approvals'|'leads'|'owners'|'staff'|'agents'|'brokers'|'clients'|'buyRequests'|'rentRequests'|'tenants'|'invoices'|'contracts'|'reports'|'settings';
+export type Module = 'dashboard'|'properties'|'approvals'|'leads'|'owners'|'staff'|'agents'|'brokers'|'clients'|'buyRequests'|'rentRequests'|'tenants'|'invoices'|'contracts'|'reports'|'settings'|`m:${string}`;
 export type PermissionMatrix = Record<Role, Partial<Record<Module, Action[]>>>;
 export interface DB { users: User[]; owners: Owner[]; staff: Staff[]; agents: Agent[]; brokers: Broker[]; clients: Client[]; properties: Property[]; leads: Lead[];
-  requests: PropertyRequest[]; tenants: Tenant[]; contracts: Contract[]; invoices: Invoice[]; plans: Plan[]; settings: Settings; permissions: PermissionMatrix }
+  requests: PropertyRequest[]; tenants: Tenant[]; contracts: Contract[]; invoices: Invoice[]; plans: Plan[]; settings: Settings; permissions: PermissionMatrix;
+  x: Record<string, any[]>; xNext: Record<string, number>; moduleSettings: Record<string, Record<string, any>> }
 
 export const MODULES: Module[] = ['dashboard', 'properties', 'approvals', 'leads', 'owners', 'staff', 'agents', 'brokers', 'clients', 'buyRequests', 'rentRequests', 'tenants', 'invoices', 'contracts', 'reports', 'settings'];
 export const ROLES: Role[] = ['admin', 'staff', 'agent', 'broker', 'owner', 'client'];

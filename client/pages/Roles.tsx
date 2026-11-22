@@ -5,6 +5,7 @@ import { BRANDING, useAuth } from '../auth';
 import { Badge, Button, useToast } from '../components/ui';
 import { DEFAULT_PERMISSIONS } from '../../shared/permissions';
 import { ROLES, ROLE_LABELS } from '../../shared/types';
+import { moduleByKey } from '../../shared/registry';
 import type { Module, Role } from '../../shared/types';
 
 const INFO: Record<Role, { icon: LucideIcon; desc: string; email: string }> = {
@@ -70,7 +71,7 @@ export default function Roles() {
                 <p>{desc}</p>
                 <p className="muted">{email}</p>
                 <div className="chip-group">
-                  {views.map(m => <span key={m} className="chip">{MODULE_LABELS[m] ?? m}</span>)}
+                  {views.map(m => <span key={m} className="chip">{MODULE_LABELS[m] ?? (m.startsWith('m:') ? moduleByKey(m.slice(2))?.label : undefined) ?? m}</span>)}
                 </div>
                 <Button disabled={busy !== null} onClick={() => void switchTo(role)}>
                   {busy === role ? 'Switching...' : `View as ${ROLE_LABELS[role]}`}

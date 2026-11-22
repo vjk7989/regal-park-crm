@@ -6,6 +6,7 @@ import { MemoryRouter, Link, Route, Routes } from 'react-router-dom';
 
 // Stub every page so the shell is tested in isolation (no JSX inside factories: they are hoisted).
 vi.mock('../../client/pages/Dashboard', () => ({ default: () => 'DASHBOARD_PAGE' }));
+vi.mock('../../client/pages/Overview', () => ({ default: () => 'OVERVIEW_PAGE' }));
 vi.mock('../../client/pages/Properties', () => ({ default: () => 'PROPERTIES_PAGE' }));
 vi.mock('../../client/pages/PropertyForm', () => ({ default: () => 'PROPERTYFORM_PAGE' }));
 vi.mock('../../client/pages/PropertyDetail', () => ({ default: () => 'PROPERTYDETAIL_PAGE' }));
@@ -23,7 +24,9 @@ import App from '../../client/App';
 import Layout from '../../client/Layout';
 import { AuthProvider } from '../../client/auth';
 import DataTable from '../../client/components/DataTable';
-import { DEFAULT_PERMISSIONS } from '../../shared/permissions';
+import { DEFAULT_PERMISSIONS, can as canDo } from '../../shared/permissions';
+import { REGISTRY } from '../../shared/registry';
+import type { Module } from '../../shared/types';
 
 type Role = 'admin' | 'staff' | 'agent' | 'broker' | 'owner' | 'client';
 
@@ -52,15 +55,25 @@ beforeEach(() => {
 });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); localStorage.clear(); });
 
-// Expected sidebar per PLAN §4 (V column), in sidebar order.
-const EXPECTED: Record<Role, string[]> = {
-  admin: ['Dashboard', 'Leads', 'Properties', 'Approvals', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts', 'Property Owners', 'My Staff', 'Real Estate Agents', 'Business Brokers', 'Clients', 'Reports', 'Settings'],
-  staff: ['Dashboard', 'Leads', 'Properties', 'Approvals', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts', 'Property Owners', 'Real Estate Agents', 'Business Brokers', 'Clients', 'Reports'],
-  agent: ['Dashboard', 'Leads', 'Properties', 'Buy Requests', 'Rental Requests', 'Clients'],
-  broker: ['Dashboard', 'Leads', 'Properties', 'Buy Requests', 'Invoices', 'Contracts', 'Property Owners', 'Clients'],
-  owner: ['Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts'],
-  client: ['Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts'],
-};
+// Expected sidebar per PLAN §4 (V column) + §10.4 / ADR-9 tree, in sidebar order, computed from the permission matrix.
+// Links visible by default: "Dashboard" (/), the Real Estate branch (open by default) children, Admin > Settings.
+// Registry modules render as collapsed branch buttons (m:<key> view) whose page links appear only when expanded.
+const RE_LINKS: [string, Module][] = [
+  ['Real Estate Dashboard', 'dashboard'], ['Leads', 'leads'], ['Properties', 'properties'], ['Approvals', 'approvals'],
+  ['Buy Requests', 'buyRequests'], ['Rental Requests', 'rentRequests'], ['Tenants', 'tenants'], ['Invoices', 'invoices'],
+  ['Contracts', 'contracts'], ['Property Owners', 'owners'], ['My Staff', 'staff'], ['Real Estate Agents', 'agents'],
+  ['Business Brokers', 'brokers'], ['Clients', 'clients'], ['Reports', 'reports'],
+];
+const expectedLinks = (role: Role, matrix: any = DEFAULT_PERMISSIONS) => [
+  ...(canDo(matrix, role, 'dashboard', 'view') ? ['Dashboard'] : []),
+  ...RE_LINKS.filter(([, m]) => canDo(matrix, role, m, 'view')).map(([l]) => l),
+  ...(canDo(matrix, role, 'settings', 'view') ? ['Settings'] : []),
+];
+const navModules = (role: Role, matrix: any = DEFAULT_PERMISSIONS) => REGISTRY.filter(m => canDo(matrix, role, `m:${m.key}`, 'view')
+  && m.pages.some(p => !(p.kind === 'table' && p.entity && m.entities.find(e => e.key === p.entity)?.lookup)));
+const EXPECTED = Object.fromEntries((['admin', 'staff', 'agent', 'broker', 'owner', 'client'] as Role[]).map(r => [r, expectedLinks(r)])) as Record<Role, string[]>;
+/** Labels of the collapsible module branches (excluding the Real Estate branch). */
+const moduleBranches = () => Array.from(document.querySelectorAll('aside nav button.nav-parent')).map(b => b.textContent!.trim()).filter(l => l !== 'Real Estate');
 // PLAN §9 / ADR-7: every logged-in sidebar ends with an always-present "All Roles" link (no permission check).
 const withAllRoles = (labels: string[]) => [...labels, 'All Roles'];
 
@@ -71,8 +84,19 @@ describe('Sidebar shows only modules the role can view (PLAN §4)', () => {
       renderApp('/');
       await waitShell();
       expect(sidebarLabels()).toEqual(withAllRoles(EXPECTED[role]));
+      // Rendered group by group (groups in first-appearance order of REGISTRY), modules in registry order within a group.
+      const mods = navModules(role);
+      const groups = [...new Set(REGISTRY.map(m => m.group))];
+      expect(moduleBranches()).toEqual(groups.flatMap(g => mods.filter(m => m.group === g).map(m => m.label)));
     });
   }
+
+  it('sanity: §4/§10.2 rules -> admin/staff see every registry module branch, other roles none', () => {
+    expect(navModules('admin').length).toBeGreaterThan(0);
+    expect(navModules('staff').map(m => m.key)).toEqual(navModules('admin').map(m => m.key));
+    for (const r of ['agent', 'broker', 'owner', 'client'] as Role[]) expect(navModules(r)).toEqual([]);
+    expect(EXPECTED.client).toEqual(['Dashboard', 'Real Estate Dashboard', 'Properties', 'Buy Requests', 'Rental Requests', 'Tenants', 'Invoices', 'Contracts']);
+  });
 
   it('admin sees Settings', async () => {
     serverAs('admin');
@@ -97,12 +121,24 @@ describe('Sidebar shows only modules the role can view (PLAN §4)', () => {
     expect(sidebarLabels()).not.toContain('My Staff');
   });
 
-  it('empty groups are not rendered (client has no People/Insights/Admin group titles)', async () => {
+  it('empty groups are not rendered (client has no module-group/Admin titles; staff has module groups but no Admin)', async () => {
     serverAs('client');
     renderApp('/');
     await waitShell();
-    const titles = Array.from(document.querySelectorAll('.nav-title')).map(e => e.textContent);
-    expect(titles).toEqual(['Overview', 'Sales', 'Rentals & Billing']);
+    const titles = () => Array.from(document.querySelectorAll('.nav-title')).map(e => e.textContent);
+    expect(titles()).toEqual([]);
+    cleanup();
+    serverAs('staff');
+    renderApp('/');
+    await waitShell();
+    const order = [...new Set(REGISTRY.map(m => m.group))];
+    const groupsOf = (r: Role) => order.filter(g => navModules(r).some(m => m.group === g));
+    expect(titles()).toEqual(groupsOf('staff'));
+    cleanup();
+    serverAs('admin');
+    renderApp('/');
+    await waitShell();
+    expect(titles()).toEqual([...groupsOf('admin'), 'Admin']);
   });
 
   it('uses the server permission matrix (admin-edited) rather than defaults', async () => {
