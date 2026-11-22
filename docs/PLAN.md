@@ -153,3 +153,41 @@ Server behaviour:
 ## 9. Roles page (user request 2026-11-22)
 - Public route `/roles` (inside Layout when logged in, standalone branded page when logged out): 6 role cards (icon, description, demo email, chips of modules the role can VIEW from the live matrix or DEFAULT_PERMISSIONS, "Current" badge, "Portal disabled" on broker when showBrokerPortal=false). "View as <Role>" = logout current session, login as that role's demo user (password demo123), navigate to "/".
 - Every logged-in user's sidebar ends with an "All Roles" link (no permission check); topbar has "Switch role" → /roles; Login page has "See all roles →" → /roles.
+
+## 10. Full Perfex module suite (user request 2026-11-22) — module engine
+Catalogue of every module/page: `docs/MODULES.md`. Real Estate (§1–9) stays as built. Everything else is generated from a typed registry so ~55 modules stay simple CRUD.
+
+### 10.1 Registry types (`shared/registry.ts`, exact names)
+```ts
+export type FieldType = 'text'|'textarea'|'number'|'money'|'percent'|'date'|'datetime'|'email'|'tel'|'url'|'select'|'multiselect'|'checkbox'|'ref';
+export type Gen = 'person'|'company'|'phone'|'email'|'address'|'locality'|'city'|'sentence'|'paragraph'|'past'|'future'|'recent'|'vehicle'|'plate'|'material'|'product'|'serial'|'hash';
+export interface FieldDef { key: string; label: string; type: FieldType; required?: boolean; options?: string[]; ref?: string; list?: boolean; pool?: string[]; min?: number; max?: number; gen?: Gen }
+// ref: a core collection name ('clients' | 'users' | 'properties' | 'staff' | 'agents' | 'brokers' | 'owners' | 'leads') OR a registry entity key. Stored value = target id. Display = target titleField (core: name, else code).
+export interface EntityDef { key: string; label: string; singular: string; prefix?: string; titleField: string; statusField?: string; dateField?: string; amountField?: string; fields: FieldDef[]; seedCount?: number; kanban?: boolean; calendar?: boolean; lookup?: boolean }
+// key: globally unique snake_case, prefixed by module key (e.g. 'fleet_vehicles'). prefix: server assigns implicit field 'code' = prefix + 4-digit number. lookup: shown as a tab on the module Settings page, not in the sidebar.
+export type PageKind = 'dashboard'|'table'|'report'|'settings'|'calendar'|'info';
+export interface PageDef { key: string; label: string; kind: PageKind; entity?: string; entities?: string[]; text?: string }
+export interface ModuleDef { key: string; label: string; icon: string; group: 'Sales & CRM'|'Operations'|'Finance'|'People'|'Marketing'|'Tools'; pages: PageDef[]; entities: EntityDef[]; settings?: FieldDef[] }
+export const REGISTRY: ModuleDef[];   // assembled in shared/modules/index.ts from one file per module group
+export function moduleByKey(key: string): ModuleDef | undefined;
+export function entityByKey(key: string): EntityDef | undefined;
+export function moduleOfEntity(key: string): ModuleDef | undefined;
+```
+`icon` is a lucide-react icon name (e.g. 'Truck'); the client maps unknown names to a default icon.
+
+### 10.2 Data + API
+- DB gains `x: Record<string, Rec[]>` (one array per registry entity key), `xNext: Record<string, number>`, `moduleSettings: Record<string, Rec>`.
+- Permission module id for a registry module = `m:<moduleKey>` (widen the Module type with a template-literal `m:${string}` variant). DEFAULT_PERMISSIONS: admin VCED on every `m:*`; staff VCE on every `m:*` except `m:accounting`, `m:payroll`, `m:team_passwords`, `m:risk` (view only); agent/broker/owner/client: none. Admin edits it in Settings → Permissions (matrix grouped by module group).
+- Routes (in `server/core.ts` + new `server/xcore.ts`): `GET|POST /x/:entity`, `GET|PUT|DELETE /x/:entity/:id` — validate required, number/money/percent numeric and ≥ 0 (unless field.min < 0), email, tel via isIndianMobile, select/multiselect within options, ref target exists; unknown entity 404; same 400 {error, field} / 403 / 404 rules as core CRUD; lists newest first by createdAt; body must be a plain object (objBody).
+- `GET /m/:module/dashboard?period=` → `{cards:[{label,value,money?:boolean}], charts:[{title,type:'pie'|'bar',data:[{name,value}]}]}`: per non-lookup entity a count card; a sum card when amountField; a status pie when statusField; a 6-month bar when dateField.
+- `GET /m/:module/report?entity=&groupBy=` → `{columns, rows}` (count + amount sum per group value).
+- `GET|PUT /m/:module/settings` (object). `GET /calendar?from=&to=` → `[{id,title,date,module,entity}]` from entities with calendar:true plus core tasks.
+- Every route permission-checked with `m:<module>`.
+
+### 10.3 Seed (`shared/seedgen.ts`, called by `scripts/seed.ts`)
+Deterministic: for each entity create `seedCount ?? 12` records. Value per field: `pool` → `options` → `gen` → type default (Indian person names, Indian companies, "+91 9xxxx xxxxx" phones, Bengaluru localities, INR amounts in [min,max], dates within ±180 days of 2026-11-22). Refs pick existing ids (core collections, or entities generated earlier — generate lookups first, then in registry order). Fill `xNext`, and `moduleSettings` defaults from each settings field's pool/options first value. Must stay deterministic and FK-valid; keep seed.json under ~3 MB.
+
+### 10.4 Client
+- Routes `/m/:module` (first page) and `/m/:module/:page`. Generic pages: `ModuleTable` (DataTable from fields where list !== false — first 8 fields by default; filters for select/status fields; add/edit FormModal (ref → select of target titles); delete confirm; "View" record modal; kanban toggle when `kanban`; CSV), `ModuleDashboard` (cards + recharts), `ModuleReport` (entity + group-by pickers → table + bar chart + CSV), `ModuleSettings` (settings form + one tab per lookup entity), `CalendarPage` (month grid of /calendar), `InfoPage` (text).
+- Sidebar: Perfex-like collapsible tree — Dashboard, Real Estate (existing links as one expandable module), then module groups → modules (expand to pages); "Filter menu" search box at top; only modules the role can view; "All Roles" stays last.
+- Main Dashboard at `/` per MODULES.md "Main Dashboard"; the Real Estate dashboard moves to `/real-estate`.
