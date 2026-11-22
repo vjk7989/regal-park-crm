@@ -354,3 +354,101 @@ describe('non-static mode (regression)', () => {
     expect(assign).toHaveBeenCalledWith('/regal-park-crm/login');
   });
 });
+
+describe('static mode: stale stored db is discarded (seedVersion / x)', () => {
+  afterEach(() => expect(fetchMock).not.toHaveBeenCalled());
+
+  const OLD_TOKEN = 'old-tok';
+  /** A stored db that differs from the seed (1 lead only) so a reseed is observable by counts. */
+  const plant = (mutate: (db: any) => void) => {
+    const db = structuredClone(seed);
+    db.leads = db.leads.slice(0, 1);
+    mutate(db);
+    localStorage.setItem('rp_db', JSON.stringify(db));
+    localStorage.setItem('rp_sessions', JSON.stringify({ [OLD_TOKEN]: seed.users[0].id }));
+    localStorage.setItem('rp_token', OLD_TOKEN);
+  };
+  const expectReseeded = () => {
+    const db = storedDb();
+    expect(db.seedVersion).toBe(seed.seedVersion);
+    expect(db.x).toBeTruthy();
+    expect(db.leads.length).toBe(seed.leads.length);
+    expect(db.users.length).toBe(seed.users.length);
+  };
+
+  it('old seedVersion -> reseeded and token/sessions cleared; first /auth/me with the old token is 401', async () => {
+    plant(db => { db.seedVersion = 'deadbeef0000'; });
+    const m = await loadApi();
+    await expect(m.api.get('/auth/me')).rejects.toMatchObject({ status: 401 });
+    expectReseeded();
+    expect(storedSessions()[OLD_TOKEN]).toBeUndefined();
+    expect(m.getToken()).toBeNull();
+    expect(assign).toHaveBeenCalledWith('/regal-park-crm/login');
+  });
+
+  it('old seedVersion -> login gives a fresh session; old token stays dead and is not re-persisted', async () => {
+    plant(db => { db.seedVersion = 'deadbeef0000'; });
+    const m = await loadApi();
+    const out = await m.api.post<any>('/auth/login', { email: ADMIN, password: PW });
+    expectReseeded();
+    expect(storedSessions()).toEqual({ [out.token]: out.user.id });
+    m.setToken(OLD_TOKEN);
+    await expect(m.api.get('/auth/me')).rejects.toMatchObject({ status: 401 });
+  });
+
+  it('matching seedVersion -> stored db kept; a user write survives a module reload', async () => {
+    plant(() => {});
+    let m = await loadApi();
+    m.setToken(null);
+    await loginAs(m);
+    expect((await m.api.get<any[]>('/leads')).length).toBe(1); // planted db kept, not reseeded
+    const lead = await m.api.post<any>('/leads', VALID_LEAD);
+    m = await loadApi();
+    const leads = await m.api.get<any[]>('/leads');
+    expect(leads.length).toBe(2);
+    expect(leads.some(l => l.id === lead.id)).toBe(true);
+    expect(storedDb().seedVersion).toBe(seed.seedVersion);
+  });
+
+  it('matching seedVersion -> existing session is kept across reload', async () => {
+    plant(() => {});
+    const m = await loadApi();
+    expect((await m.api.get<any>('/auth/me')).user.id).toBe(seed.users[0].id);
+    expect(m.getToken()).toBe(OLD_TOKEN);
+  });
+
+  it('stored db without x (pre-module) -> reseeded, sessions cleared', async () => {
+    plant(db => { delete db.x; });
+    const m = await loadApi();
+    await expect(m.api.get('/auth/me')).rejects.toMatchObject({ status: 401 });
+    expectReseeded();
+    expect(storedSessions()[OLD_TOKEN]).toBeUndefined();
+  });
+
+  it('stored db without seedVersion -> reseeded, sessions cleared', async () => {
+    plant(db => { delete db.seedVersion; });
+    const m = await loadApi();
+    await expect(m.api.get('/auth/me')).rejects.toMatchObject({ status: 401 });
+    expectReseeded();
+    expect(storedSessions()[OLD_TOKEN]).toBeUndefined();
+  });
+
+  it('corrupted rp_db still falls back to the seed (with seedVersion and x)', async () => {
+    localStorage.setItem('rp_db', '{"seedVersion":');
+    const m = await loadApi();
+    await loginAs(m);
+    expectReseeded();
+  });
+
+  it('reset still works after a stale-db reseed and keeps seedVersion', async () => {
+    plant(db => { db.seedVersion = 'deadbeef0000'; });
+    const m = await loadApi();
+    m.setToken(null);
+    await loginAs(m);
+    await m.api.post('/leads', VALID_LEAD);
+    expect(storedDb().leads.length).toBe(seed.leads.length + 1);
+    await m.api.post('/admin/reset');
+    expectReseeded();
+    expect((await m.api.get<any[]>('/leads')).length).toBe(seed.leads.length);
+  });
+});

@@ -17,6 +17,12 @@ function load(): DB {
   const raw = read(DB_KEY);
   if (raw) {
     try { current = JSON.parse(raw) as DB; } catch { current = null; }
+    // A db from an older seed (different seedVersion, or pre-module without `x`) is discarded together with its sessions.
+    if (current && ((current as unknown as { seedVersion?: string }).seedVersion !== (seed as { seedVersion?: string }).seedVersion || !current.x)) {
+      current = null;
+      memSessions = {};
+      try { localStorage.removeItem(SESSIONS_KEY); localStorage.removeItem('rp_token'); } catch { /* ignore */ }
+    }
   }
   if (!current) {
     current = fresh();
@@ -51,6 +57,7 @@ const store: Store = {
 };
 
 export async function localFetch(method: string, path: string, body: unknown, token?: string | null): Promise<{ status: number; body: any }> {
+  load(); // version check first: stale sessions must be cleared before any session lookup
   const [p, qs = ''] = path.split('?');
   const query: CoreRequest['query'] = {};
   new URLSearchParams(qs).forEach((v, k) => {

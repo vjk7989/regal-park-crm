@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import type {
   Agent, Broker, Client, Contract, DB, Invoice, Lead, LeadStatus, Owner, Payment, Plan, Property, PropertyRequest,
@@ -459,6 +460,8 @@ if (!clientBuy || !clientTen || !clientInv) errors.push('client minimums');
 
 const CHECK = process.argv.includes('--check');
 const dir = path.resolve(process.cwd(), 'data');
+const seedVersion = createHash('sha1').update(JSON.stringify(db, null, 2) + '\n').digest('hex').slice(0, 12);
+db.seedVersion = seedVersion;
 const json = JSON.stringify(db, null, 2) + '\n';
 if (!CHECK) {
   fs.mkdirSync(dir, { recursive: true });

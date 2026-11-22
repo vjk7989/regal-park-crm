@@ -58,3 +58,4 @@ Markers at line end: `[ ]` pending · `[.]` ongoing (note) · `[x]` done
 - XB6 · D1 · Main Perfex-style dashboard at "/", Real Estate dashboard → /real-estate [x]
 - X.test · Opus tests per phase (engine, registry integrity, seed FK, UI engine) + Haiku gate — 2660 tests, Haiku gate GREEN [x]
 - X.verify · Browser check module groups as admin/staff/client; push; verify live [.]
+- X.fix1 · D2+D3 · Live bug: returning visitors kept a pre-module localStorage db → seedVersion in seed.json; localApi reseeds + clears stale sessions before any lookup (2673 tests GREEN) [x]
