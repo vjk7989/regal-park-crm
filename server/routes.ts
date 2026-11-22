@@ -105,10 +105,10 @@ export function createApp() {
   api.get('/auth/me', (_req, res) => res.json({ user: publicUser(me(res)) }));
   api.post('/auth/logout', (req, res) => { logout(req); res.json({ ok: true }); });
 
-  api.get('/dashboard', (_req, res) => {
+  api.get('/dashboard', (req, res) => {
     const db = getDb(), u = me(res);
     const list = (c: string) => scopedList(db, u, c);
-    res.json(dashboard(list('properties') as Property[], list('requests'), list('invoices') as Invoice[], list('leads')));
+    res.json(dashboard(list('properties') as Property[], list('requests'), list('invoices') as Invoice[], list('leads'), String(req.query.period ?? 'all')));
   });
 
   api.get('/reports/:type', (req, res) => {

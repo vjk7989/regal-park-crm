@@ -89,8 +89,24 @@ const count = (items: string[]) => {
   return [...m].map(([name, value]) => ({ name, value }));
 };
 
+/** Start date (YYYY-MM-DD) of a dashboard period; undefined = all time (also for unknown values). */
+function periodStart(period: string): string | undefined {
+  const d = new Date();
+  if (period === 'month') d.setUTCDate(1);
+  else if (period === '3m') { d.setUTCDate(1); d.setUTCMonth(d.getUTCMonth() - 2); }
+  else if (period === 'year') d.setUTCMonth(0, 1);
+  else return undefined;
+  return d.toISOString().slice(0, 10);
+}
+
 /** Aggregates over already-scoped lists. */
-export function dashboard(props: Rec[], requests: Rec[], invoices: Invoice[], leads: Rec[]) {
+export function dashboard(props: Rec[], requests: Rec[], invoices: Invoice[], leads: Rec[], period = 'all') {
+  const from = periodStart(period);
+  if (from) {
+    requests = requests.filter(r => r.createdAt.slice(0, 10) >= from);
+    leads = leads.filter(l => l.createdAt.slice(0, 10) >= from);
+    invoices = invoices.map(i => ({ ...i, payments: (i.payments ?? []).filter(p => p.date >= from) }));
+  }
   const income = (kind: string) => sum(invoices.filter(i => i.kind === kind).map(paidOf));
   const listed = (type: string) => props.filter(p => p.transactionType === type && ['Active', 'New'].includes(p.status)).length;
   const byId = new Map(props.map(p => [p.id, p]));
